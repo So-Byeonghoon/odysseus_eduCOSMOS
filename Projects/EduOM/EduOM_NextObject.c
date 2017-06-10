@@ -115,7 +115,61 @@ Four EduOM_NextObject(
     
     if (nextOID == NULL) ERR(eBADOBJECTID_OM);
 
+    e = BfM_GetTrain((TrainID*)catObjForFile, (char**)&catPage, PAGE_BUF);
+    if(e < 0) ERR(e);
+    GET_PTR_TO_CATENTRY_FOR_DATA(catObjForFile, catPage, catEntry);
+    MAKE_PHYSICALFILEID(pFid, catEntry->fid.volNo, catEntry->firstPage);
 
+    if(curOID == NULL) {
+        pageNo = catEntry->firstPage;
+        if(pageNo != NULL) {
+            MAKE_PAGEID(pid, pFid.volNo, pageNo);
+            e = BfM_GetTrain((TrainID*)&pid, (char**)&apage, PAGE_BUF);
+            if(e < 0) ERR(e);
+            //if(apage->header.nSlots = 0) {
+            //}
+
+            nextOID->pageNo = pageNo;
+            nextOID->volNo = pid.volNo;
+            nextOID->slotNo = 0;
+            nextOID->unique = apage->slot[0].unique;
+
+            e = BfM_FreeTrain((TrainID*)&pid, PAGE_BUF);
+            if(e < 0) ERR(e);
+        }
+    }
+    else {
+        MAKE_PAGEID(pid, curOID->volNo, curOID->pageNo);
+        e = BfM_GetTrain((TrainID*)&pid, (char**)&apage, PAGE_BUF);
+        if(e < 0) ERR(e);
+
+        if(apage->header.nSlots == curOID->slotNo + 1) {
+            if(apage->header.pid.pageNo != catEntry->lastPage) {
+                pageNo = apage->header.nextPage;
+                e = BfM_FreeTrain((TrainID*)&pid, PAGE_BUF);
+                if(e < 0) ERR(e);
+                pid.pageNo = pageNo;
+                e = BfM_GetTrain((TrainID*)&pid, (char**)&apage, PAGE_BUF);
+                if(e < 0) ERR(e);
+                nextOID->pageNo = pageNo;
+                nextOID->volNo = curOID->volNo;
+                nextOID->slotNo = 0;
+                nextOID->unique = apage->slot[0].unique;
+            }
+        }
+        else {
+            nextOID->pageNo = curOID->pageNo;
+            nextOID->volNo = curOID->volNo;
+            nextOID->slotNo = curOID->slotNo + 1;
+            nextOID->unique = apage->slot[-nextOID->slotNo].unique;
+        }
+
+        e = BfM_FreeTrain((TrainID*)&pid, PAGE_BUF);
+        if(e < 0) ERR(e);
+    }
+
+    e = BfM_FreeTrain((TrainID*)catObjForFile, PAGE_BUF);
+    if(e < 0) ERR(e);
 
     return(EOS);		/* end of scan */
     

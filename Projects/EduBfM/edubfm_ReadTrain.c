@@ -96,11 +96,12 @@ Four edubfm_ReadTrain(
 	/* These local variables are used in the solution code. However, you don¡¯t have to use all these variables in your code, and you may also declare and use additional local variables if needed. */
     Four e;			/* for error */
 
-
 	/* Error check whether using not supported functionality by EduBfM */
 	if (RM_IS_ROLLBACK_REQUIRED()) ERR(eNOTSUPPORTED_EDUBFM);
+    if (IS_BAD_BUFFERTYPE(type)) ERR(eBADBUFFERTYPE_BFM);
 
-
+    e = RDsM_ReadTrain(trainId, aTrain, BI_BUFSIZE(type));
+    if ( e < 0 ) ERR( e );
 
     return( eNOERROR );
 

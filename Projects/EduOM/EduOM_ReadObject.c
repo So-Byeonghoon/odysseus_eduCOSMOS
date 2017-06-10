@@ -128,12 +128,27 @@ Four EduOM_ReadObject(
     /*@ check parameters */
 
     if (oid == NULL) ERR(eBADOBJECTID_OM);
-
-    if (length < 0 && length != REMAINDER) ERR(eBADLENGTH_OM);
     
     if (buf == NULL) ERR(eBADUSERBUF_OM);
 
-    
+    if (start < 0) ERR(eBADSTART_OM);
+
+    MAKE_PAGEID(pid, oid->volNo, oid->pageNo);
+    e = BfM_GetTrain((TrainID*)&pid, (char**)&apage, PAGE_BUF);
+    if(e < 0) ERR(e);
+
+    offset = apage->slot[-(oid->slotNo)].offset;
+    obj = (Object*)&(apage->data[offset]);
+
+    if ((length < 0 && length != REMAINDER) || obj->header.length < start + length)
+        ERR(eBADLENGTH_OM);
+    //buf = &(obj->data[start]);
+    if(length == REMAINDER)
+        length = obj->header.length;
+    memcpy(buf, &(obj->data[start]), length);
+
+    e = BfM_FreeTrain((TrainID*)&pid, PAGE_BUF);
+    if(e < 0) ERR(e);
 
     return(length);
     

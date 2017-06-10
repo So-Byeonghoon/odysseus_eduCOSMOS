@@ -86,13 +86,22 @@ Four EduBfM_FreeTrain(
 {
 	/* These local variables are used in the solution code. However, you don¡¯t have to use all these variables in your code, and you may also declare and use additional local variables if needed. */
     Four                index;          /* index on buffer holding the train */
-    Four 		e;		/* error code */
+    Two 		        fixed_num;		/* fixed count */
 
     /*@ check if the parameter is valid. */
-    if (IS_BAD_BUFFERTYPE(type)) ERR(eBADBUFFERTYPE_BFM);	
+    if (IS_BAD_BUFFERTYPE(type)) ERR(eBADBUFFERTYPE_BFM);
 
-
+    index = edubfm_LookUp(trainId, type);    
+    if ( index == NOTFOUND_IN_HTABLE ) ERR( eNOTFOUND_BFM );
     
+    fixed_num = BI_FIXED(type, index);
+    if ( fixed_num > 0 )
+        fixed_num -= 1;
+    else
+        PRINT_TRAINID("fixed_num is less than zero: trainID", &BI_KEY(type, index));
+ 
+    BI_FIXED(type, index) = fixed_num;
+
     return( eNOERROR );
     
 } /* EduBfM_FreeTrain() */

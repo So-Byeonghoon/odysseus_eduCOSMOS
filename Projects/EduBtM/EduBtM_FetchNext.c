@@ -132,6 +132,21 @@ Four EduBtM_FetchNext(
             ERR(eNOTSUPPORTED_EDUBTM);
     }
 
+    if (compOp == SM_BOF) {
+        compOp = SM_GE;
+        e = edubtm_FirstObject(root, kdesc, kval, compOp, &tCursor);
+        if (e < 0) ERR(e);
+        *kval = tCursor.key;
+    }
+    else if (compOp == SM_EOF) {
+        compOp = SM_LE;
+        e = edubtm_LastObject(root, kdesc, kval, compOp, &tCursor);
+        if (e < 0) ERR(e);
+        *kval = tCursor.key;
+    }
+
+    e = edubtm_FetchNext(kdesc, kval, compOp, current, next);
+    if (e < 0) ERR(e);
     
     return(eNOERROR);
     
@@ -170,10 +185,10 @@ Four edubtm_FetchNext(
     Four 		cmp;		/* comparison result */
     Two 		alignedKlen;	/* aligned length of a key length */
     PageID 		leaf;		/* temporary PageID of a leaf page */
-    PageID 		overflow;	/* temporary PageID of an overflow page */
+    // PageID 		overflow;	/* temporary PageID of an overflow page */
     ObjectID 		*oidArray;	/* array of ObjectIDs */
     BtreeLeaf 		*apage;		/* pointer to a buffer holding a leaf page */
-    BtreeOverflow 	*opage;		/* pointer to a buffer holding an overflow page */
+    // BtreeOverflow 	*opage;		/* pointer to a buffer holding an overflow page */
     btm_LeafEntry 	*entry;		/* pointer to a leaf entry */    
     
     
@@ -185,6 +200,95 @@ Four edubtm_FetchNext(
             ERR(eNOTSUPPORTED_EDUBTM);
     }
 
+
+    leaf = current->leaf;
+    e = BfM_GetTrain((TrainID*)&leaf, (char**)&apage, PAGE_BUF);
+    if (e < 0) ERR(e);
+
+    *next = *current;
+    // check objects of same key
+    if (!(kdesc->flag & KEYFLAG_UNIQUE)) {
+        entry = (btm_LeafEntry*)&(apage->data[apage->slot[-next->slotNo]]);
+        alignedKlen = (entry->klen+3)/4*4;
+        oidArray = (ObjectID*)&(entry->kval[alignedKlen]);
+        // printf("not UNIQUE: n=%d\n", entry->nObjects);
+        for (i=1; i < entry->nObjects; i++) {
+            if (oidArray[i-1].unique == current->oid.unique) {
+                next->oid = oidArray[i];
+                e = BfM_FreeTrain((TrainID*)&leaf, PAGE_BUF);
+                if (e < 0) ERR(e);
+                return(eNOERROR);
+            }
+        }
+        if (oidArray[entry->nObjects-1].unique != current->oid.unique) 
+            ERR(eBADCURSOR);
+    }
+
+    // index increase order
+    if (compOp & SM_LT) {
+        // check next whether slot exist
+        if (++(next->slotNo) >= apage->hdr.nSlots) {
+            // Is last leaf page of index?
+            if (apage->hdr.nextPage == NIL) {
+                // printf("next page is NIL\n");
+                next->flag = CURSOR_EOS;
+                e = BfM_FreeTrain((TrainID*)&leaf, PAGE_BUF);
+                if (e < 0) ERR(e);
+                return(eNOERROR);
+            }
+            // go to next page (leaf)
+            // printf("next page is %d\n", apage->hdr.nextPage);
+            next->leaf.pageNo = apage->hdr.nextPage;
+            next->slotNo = 0;
+            e = BfM_FreeTrain((TrainID*)&leaf, PAGE_BUF);
+            if (e < 0) ERR(e);
+            leaf.pageNo = next->leaf.pageNo;
+            e = BfM_GetTrain((TrainID*)&leaf, (char**)&apage, PAGE_BUF);
+            if (e < 0) ERR(e);
+        }
+    }
+    // index decrease order
+    else {
+        // check prev whether slot exist
+        if (--(next->slotNo) < 0) {
+            // Is first leaf page of index?
+            if (apage->hdr.prevPage == NIL) {
+                // printf("prev page is NIL\n");
+                next->flag = CURSOR_EOS;
+                e = BfM_FreeTrain((TrainID*)&leaf, PAGE_BUF);
+                if (e < 0) ERR(e);
+                return(eNOERROR);
+            }
+            // go to prev page (leaf)
+            // printf("prev page is %d\n", apage->hdr.prevPage);
+            next->leaf.pageNo = apage->hdr.prevPage;
+            e = BfM_FreeTrain((TrainID*)&leaf, PAGE_BUF);
+            if (e < 0) ERR(e);
+            leaf.pageNo = next->leaf.pageNo;
+            e = BfM_GetTrain((TrainID*)&leaf, (char**)&apage, PAGE_BUF);
+            if (e < 0) ERR(e);
+            next->slotNo = apage->hdr.nSlots-1;
+        }
+    }
+
+    //update next
+    entry = &apage->data[apage->slot[-next->slotNo]];
+    alignedKlen = (entry->klen+3)/4*4;
+    oidArray = (ObjectID*)&(entry->kval[alignedKlen]);
+    next->oid = oidArray[0];
+    next->key = *(KeyValue*)&entry->klen;
+
+    // printf("LEN: kval=%d, next=%d\n", kval->len, next->key.len);
+    // printf("STR: kval=%s, next=%s\n", kval->val, next->key.val);
+    // printf("STR: kval=%d, next=%d\n", kval->val[0], next->key.val[0]);
+    cmp = edubtm_KeyCompare(kdesc, kval, &next->key);
+    if (1 << cmp & compOp)
+        next->flag = CURSOR_ON;
+    else
+        next->flag = CURSOR_EOS;
+
+    e = BfM_FreeTrain((TrainID*)&leaf, PAGE_BUF);
+    if (e < 0) ERR(e);
     
     return(eNOERROR);
     

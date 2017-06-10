@@ -129,7 +129,14 @@ Four EduOM_CreateObject(
 	/* Error check whether using not supported functionality by EduOM */
 	if(ALIGNED_LENGTH(length) > LRGOBJ_THRESHOLD) ERR(eNOTSUPPORTED_EDUOM);
     
+    objectHdr.properties = 0;
+    objectHdr.length = 0;
+    objectHdr.tag = 0;
+    if(objHdr != NULL) {
+        objectHdr.tag = objHdr->tag;
+    }
 
+    eduom_CreateObject(catObjForFile, nearObj, &objectHdr, length, data, oid);
     
     return(eNOERROR);
 }

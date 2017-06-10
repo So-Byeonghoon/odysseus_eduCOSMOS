@@ -110,9 +110,30 @@ Four EduOM_CompactPage(
     Two    apageDataOffset;	/* where the next object is to be moved */
     Four   len;			/* length of object + length of ObjectHdr */
     Two    lastSlot;		/* last non empty slot */
-    Two    i;			/* index variable */
+    Two    i, j;			/* index variable */
 
-    
+    tpage = *apage;
+
+    apageDataOffset = 0;
+    lastSlot = apage->header.nSlots;
+    for(i=0; i < lastSlot; i++) {
+        if (slotNo == i || tpage.slot[-i].offset == EMPTYSLOT)
+            continue;
+        obj = &(tpage.data[tpage.slot[-i].offset]);
+        len = ALIGNED_LENGTH(obj->header.length) + sizeof(ObjectHdr);
+        memcpy(&(apage->data[apageDataOffset]), (char*)obj, len);
+        apage->slot[-i].offset = apageDataOffset;
+        apageDataOffset += len;
+    }
+    if (slotNo != NIL) {
+        obj = &(tpage.data[tpage.slot[-slotNo].offset]);
+        len = ALIGNED_LENGTH(obj->header.length) + sizeof(ObjectHdr);
+        memcpy(&(apage->data[apageDataOffset]), (char*)obj, len);
+        apage->slot[-slotNo].offset = apageDataOffset;
+        apageDataOffset += len;
+    }
+    apage->header.free = apageDataOffset;
+    apage->header.unused = 0;
 
     return(eNOERROR);
     

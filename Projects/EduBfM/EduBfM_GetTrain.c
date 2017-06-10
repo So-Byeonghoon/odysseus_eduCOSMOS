@@ -59,7 +59,7 @@
 
 #include "EduBfM_common.h"
 #include "EduBfM_Internal.h"
-
+#include <stdio.h>
 
 
 /*@================================
@@ -99,7 +99,7 @@ Four EduBfM_GetTrain(
 	/* These local variables are used in the solution code. However, you don¡¯t have to use all these variables in your code, and you may also declare and use additional local variables if needed. */
     Four                e;                      /* for error */
     Four                index;                  /* index of the buffer pool */
-
+    
 
     /*@ Check the validity of given parameters */
     /* Some restrictions may be added         */
@@ -108,7 +108,20 @@ Four EduBfM_GetTrain(
     /* Is the buffer type valid? */
     if(IS_BAD_BUFFERTYPE(type)) ERR(eBADBUFFERTYPE_BFM);	
 
-
+    index = edubfm_LookUp((BfMHashKey*)trainId, type);
+    if ( index == NOTFOUND_IN_HTABLE ) {
+        index = edubfm_AllocTrain(type);
+        BI_KEY(type, index) = *((BfMHashKey*)trainId);
+        e = edubfm_Insert((BfMHashKey*)trainId, index, type);
+        if ( e < 0 ) ERR( e );
+        e = edubfm_ReadTrain(trainId, BI_BUFFER(type, index), type);
+        if ( e < 0 ) ERR( e );
+        BI_BITS(type, index) = REFER;
+    }
+    
+    //BI_BITS(type, index) |= REFER;
+    BI_FIXED(type, index) += 1;
+    *retBuf = BI_BUFFER(type, index);
 
     return(eNOERROR);   /* No error */
 

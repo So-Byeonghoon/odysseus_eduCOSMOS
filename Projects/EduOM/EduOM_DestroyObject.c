@@ -129,8 +129,54 @@ Four EduOM_DestroyObject(
 
     if (oid == NULL) ERR(eBADOBJECTID_OM);
 
+    e = BfM_GetTrain((TrainID*)catObjForFile, (char**)&catPage, PAGE_BUF);
+    if(e < 0) ERR(e);
+    GET_PTR_TO_CATENTRY_FOR_DATA(catObjForFile, catPage, catEntry);
+    MAKE_PHYSICALFILEID(pFid, catEntry->fid.volNo, catEntry->firstPage);
 
+    MAKE_PAGEID(pid, oid->volNo, oid->pageNo);
+    e = BfM_GetTrain((TrainID*)&pid, (char**)&apage, PAGE_BUF);
+    if(e < 0) ERR(e);
+    e = om_RemoveFromAvailSpaceList(catObjForFile, &pid, apage);
+    if(e < 0) ERRB1(e, &pid, PAGE_BUF);
+
+    offset = apage->slot[-(oid->slotNo)].offset;
+    obj = (Object*)&(apage->data[offset]);
+    alignedLen = ALIGNED_LENGTH(obj->header.length);
+
+    apage->slot[-(oid->slotNo)].offset = EMPTYSLOT;
+    if(oid->slotNo == apage->header.nSlots - 1) {
+        apage->header.nSlots -= 1;
+        apage->header.free -= alignedLen + sizeof(ObjectHdr);
+    }
+    else {
+        apage->header.unused += alignedLen + sizeof(ObjectHdr);
+    }
+
+    if(apage->header.nSlots == 0 && 
+            apage->header.pid.pageNo != catEntry->firstPage) {
+        e = om_FileMapDeletePage(catObjForFile, &pid);
+        if(e < 0) ERRB1(e, &pid, PAGE_BUF);
+        e = Util_getElementFromPool(dlPool, &dlElem);
+        if(e < 0) ERR(e);
+
+        dlElem->type = DL_PAGE;
+        dlElem->elem.pid = pid;
+        dlElem->next = dlHead->next;
+        dlHead->next = dlElem;
+    }
+    else {
+        e = om_PutInAvailSpaceList(catObjForFile, &pid, apage);
+        if(e < 0) ERRB1(e, &pid, PAGE_BUF);
+    }
     
+    e = BfM_SetDirty((TrainID*)&pid, PAGE_BUF);
+    if(e < 0) ERR(e);
+    e = BfM_FreeTrain((TrainID*)&pid, PAGE_BUF);
+    if(e < 0) ERR(e);
+    e = BfM_FreeTrain((TrainID*)catObjForFile, PAGE_BUF);
+    if(e < 0) ERR(e);
+
     return(eNOERROR);
     
 } /* EduOM_DestroyObject() */

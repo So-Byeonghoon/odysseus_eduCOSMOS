@@ -279,7 +279,7 @@ Four EduBfM_Test(Four volId)
 		/* The successful default solution code is called if "Edu" is omitted from the function name in the following line */
 		e = EduBfM_GetTrain(&pageID[i], (char **)&apage, PAGE_BUF);
 		if (e < eNOERROR) ERR(e);
-		
+
 		apage->header.flags = i+1;
 		printf("The header flags value of pageNo %d is setted \"%d\"\n", pageID[i].pageNo, apage->header.flags);
 		/* The successful default solution code is called if "Edu" is omitted from the function name in the following line */

@@ -116,6 +116,34 @@ Four edubtm_FirstObject(
     }
     
 
+    curPid = *root;
+    child = curPid;
+    e = BfM_GetTrain(&curPid, (char**)&apage, PAGE_BUF);
+    if (e < 0) ERR(e);
+    
+    while (!(apage->any.hdr.type & LEAF)) {
+        if (!(apage->any.hdr.type & INTERNAL))
+            ERRB1(eBADPAGE_BTM, &curPid, PAGE_BUF);
+        child.pageNo = apage->bi.hdr.p0;
+
+        e = BfM_GetTrain(&child, (char**)&apage, PAGE_BUF);
+        if (e < 0) ERRB1(e, &curPid, PAGE_BUF);
+        e = BfM_FreeTrain(&curPid, PAGE_BUF);
+        if (e < 0) ERRB1(e, &child, PAGE_BUF);
+        curPid = child;
+    }
+    lEntry = (btm_LeafEntry*)&apage->bl.data[apage->bl.slot[0]];
+    alignedKlen = (lEntry->klen + 3)/4*4;
+
+    cursor->flag = CURSOR_ON;
+    cursor->oid = *(ObjectID*)&lEntry->kval[alignedKlen];
+    cursor->key = *(KeyValue*)&lEntry->klen;
+    cursor->leaf = curPid;
+    cursor->slotNo = 0;
+
+    e = BfM_FreeTrain(&curPid, PAGE_BUF);
+    if (e < 0) ERR(e);
+
     return(eNOERROR);
     
 } /* edubtm_FirstObject() */

@@ -1,0 +1,914 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALIGN	EduBtM/Header/EduBtM_common.h	441;"	d
+ALIGN	EduOM/Header/EduOM_common.h	369;"	d
+ALIGNED_LENGTH	EduBtM/Header/EduBtM_common.h	442;"	d
+ALIGNED_LENGTH	EduOM/Header/EduOM_common.h	370;"	d
+ALIGN_TYPE	EduBtM/Header/EduBtM_basictypes.h	/^typedef Four_Invariable         ALIGN_TYPE;$/;"	t
+ALIGN_TYPE	EduOM/Header/EduOM_basictypes.h	/^typedef Four_Invariable         ALIGN_TYPE;$/;"	t
+ALL_0	EduBfM/Header/EduBfM_Internal.h	123;"	d
+ALL_1	EduBfM/Header/EduBfM_Internal.h	124;"	d
+ARRAYINDEX	EduBtM/Header/EduBtM_TestModule.h	62;"	d
+ARRAYINDEX	EduOM/Header/EduOM_TestModule.h	64;"	d
+A_FOURTH_OF_OBJECTS	EduBtM/Header/EduBtM_Internal.h	216;"	d
+BANY_FIXED	EduBtM/Header/EduBtM_Internal.h	95;"	d
+BEGIN_MACRO	EduBfM/Header/EduBfM_common.h	57;"	d
+BEGIN_MACRO	EduBtM/Header/EduBtM_common.h	82;"	d
+BEGIN_MACRO	EduOM/Header/EduOM_common.h	64;"	d
+BFM_ERR_BASE	EduBfM/Header/EduBfM_errorcodes.h	57;"	d
+BFM_HASH	EduBfM/edubfm_Hash.c	84;"	d	file:
+BI_BITS	EduBfM/Header/EduBfM_Internal.h	185;"	d
+BI_BUFFER	EduBfM/Header/EduBfM_Internal.h	211;"	d
+BI_BUFFERPOOL	EduBfM/Header/EduBfM_Internal.h	202;"	d
+BI_BUFSIZE	EduBfM/Header/EduBfM_Internal.h	142;"	d
+BI_BUFTABLE_ENTRY	EduBfM/Header/EduBfM_TestModule.h	70;"	d
+BI_CFREE	EduBtM/Header/EduBtM_Internal.h	141;"	d
+BI_FIXED	EduBfM/Header/EduBfM_Internal.h	176;"	d
+BI_FIXED	EduBtM/Header/EduBtM_Internal.h	119;"	d
+BI_FREE	EduBtM/Header/EduBtM_Internal.h	133;"	d
+BI_HALF	EduBtM/Header/EduBtM_Internal.h	142;"	d
+BI_HASHTABLE	EduBfM/Header/EduBfM_Internal.h	219;"	d
+BI_HASHTABLEENTRY	EduBfM/Header/EduBfM_Internal.h	228;"	d
+BI_KEY	EduBfM/Header/EduBfM_Internal.h	167;"	d
+BI_NBUFS	EduBfM/Header/EduBfM_Internal.h	150;"	d
+BI_NEXTHASHENTRY	EduBfM/Header/EduBfM_Internal.h	194;"	d
+BI_NEXTVICTIM	EduBfM/Header/EduBfM_Internal.h	158;"	d
+BL_CFREE	EduBtM/Header/EduBtM_Internal.h	183;"	d
+BL_FIXED	EduBtM/Header/EduBtM_Internal.h	161;"	d
+BL_FREE	EduBtM/Header/EduBtM_Internal.h	175;"	d
+BL_HALF	EduBtM/Header/EduBtM_Internal.h	184;"	d
+BO_DUMMY	EduBtM/Header/EduBtM_Internal.h	204;"	d
+BO_FIXED	EduBtM/Header/EduBtM_Internal.h	202;"	d
+BO_MAXOBJECTIDS	EduBtM/Header/EduBtM_Internal.h	203;"	d
+BTM_ERR_BASE	EduBtM/Header/EduBtM_errorcodes.h	58;"	d
+BTM_LEAFENTRY_FIXED	EduBtM/Header/EduBtM_Internal.h	264;"	d
+BTREE_PAGE_TYPE	EduBtM/Header/EduBtM_common.h	271;"	d
+BUFT	EduBfM/EduBfM_Test.c	397;"	d	file:
+BfMHashKey	EduBfM/Header/EduBfM_Internal.h	/^} BfMHashKey;$/;"	t	typeref:struct:__anon55
+Boolean	EduBfM/Header/EduBfM_basictypes.h	/^typedef enum { FALSE, TRUE } Boolean;$/;"	t	typeref:enum:__anon58
+Boolean	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum { FALSE, TRUE } Boolean;$/;"	t	typeref:enum:__anon14
+Boolean	EduOM/Header/EduOM_basictypes.h	/^typedef enum { FALSE, TRUE } Boolean;$/;"	t	typeref:enum:__anon51
+BtreeAny	EduBtM/Header/EduBtM_Internal.h	/^} BtreeAny;$/;"	t	typeref:struct:__anon2
+BtreeAnyHdr	EduBtM/Header/EduBtM_Internal.h	/^} BtreeAnyHdr;$/;"	t	typeref:struct:__anon1
+BtreeCursor	EduBtM/Header/EduBtM_common.h	/^} BtreeCursor;$/;"	t	typeref:struct:__anon29
+BtreeInternal	EduBtM/Header/EduBtM_Internal.h	/^} BtreeInternal;$/;"	t	typeref:struct:__anon4
+BtreeInternalHdr	EduBtM/Header/EduBtM_Internal.h	/^} BtreeInternalHdr;$/;"	t	typeref:struct:__anon3
+BtreeLeaf	EduBtM/Header/EduBtM_Internal.h	/^} BtreeLeaf;$/;"	t	typeref:struct:__anon6
+BtreeLeafHdr	EduBtM/Header/EduBtM_Internal.h	/^} BtreeLeafHdr;$/;"	t	typeref:struct:__anon5
+BtreeOverflow	EduBtM/Header/EduBtM_Internal.h	/^} BtreeOverflow;$/;"	t	typeref:struct:__anon8
+BtreeOverflowHdr	EduBtM/Header/EduBtM_Internal.h	/^} BtreeOverflowHdr;$/;"	t	typeref:struct:__anon7
+BtreePage	EduBtM/Header/EduBtM_Internal.h	/^} BtreePage;$/;"	t	typeref:union:__anon9
+BufferInfo	EduBfM/Header/EduBfM_Internal.h	/^} BufferInfo;$/;"	t	typeref:struct:__anon57
+BufferTable	EduBfM/Header/EduBfM_Internal.h	/^} BufferTable;$/;"	t	typeref:struct:__anon56
+CC	EduBfM/Makefile	/^CC = gcc$/;"	m
+CC	EduBtM/Makefile	/^CC = gcc$/;"	m
+CC	EduOM/Makefile	/^CC = gcc$/;"	m
+CFLAGS	EduBfM/Makefile	/^CFLAGS = -w -g -fsigned-char -fPIC -I$(INCLUDE)$/;"	m
+CFLAGS	EduBtM/Makefile	/^CFLAGS = -w -g -fsigned-char -fPIC -I$(INCLUDE)$/;"	m
+CFLAGS	EduOM/Makefile	/^CFLAGS = -w -g -fsigned-char -fPIC -I$(INCLUDE)$/;"	m
+CHECKKEY	EduBfM/Header/EduBfM_Internal.h	98;"	d
+CONSTANT_ALL_BITS_SET	EduBtM/Header/EduBtM_common.h	265;"	d
+CONSTANT_ALL_BITS_SET	EduOM/Header/EduOM_common.h	242;"	d
+CONSTANT_CASTING_TYPE	EduBfM/Header/EduBfM_TestModule.h	59;"	d
+CONSTANT_CASTING_TYPE	EduBtM/Header/EduBtM_basictypes.h	92;"	d
+CONSTANT_CASTING_TYPE	EduOM/Header/EduOM_basictypes.h	83;"	d
+COSMOS_OBJ	EduBfM/Makefile	/^	COSMOS_OBJ = cosmos_32bit.o$/;"	m
+COSMOS_OBJ	EduBfM/Makefile	/^	COSMOS_OBJ = cosmos_64bit.o$/;"	m
+COSMOS_OBJ	EduBtM/Makefile	/^	COSMOS_OBJ = cosmos_32bit.o$/;"	m
+COSMOS_OBJ	EduBtM/Makefile	/^	COSMOS_OBJ = cosmos_64bit.o$/;"	m
+COSMOS_OBJ	EduOM/Makefile	/^	COSMOS_OBJ = cosmos_32bit.o$/;"	m
+COSMOS_OBJ	EduOM/Makefile	/^	COSMOS_OBJ = cosmos_64bit.o$/;"	m
+CURSOR_EOS	EduBtM/Header/EduBtM_common.h	378;"	d
+CURSOR_INVALID	EduBtM/Header/EduBtM_common.h	376;"	d
+CURSOR_ON	EduBtM/Header/EduBtM_common.h	377;"	d
+CfgParams_T	EduBfM/Header/EduBfM_common.h	/^} CfgParams_T;$/;"	t	typeref:struct:CfgParams_T_tag
+CfgParams_T_tag	EduBfM/Header/EduBfM_common.h	/^typedef struct CfgParams_T_tag {$/;"	s
+ClassID	EduBtM/Header/EduBtM_common.h	/^typedef Four ClassID;$/;"	t
+CompOp	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum {SM_EQ=0x1, SM_LT=0x2, SM_LE=0x3, SM_GT=0x4, SM_GE=0x5, SM_NE=0x6, SM_EOF=0x10, SM_BOF=0x20} CompOp;$/;"	t	typeref:enum:__anon15
+ConcurrencyLevel	EduBfM/Header/EduBfM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	t	typeref:enum:__anon53
+ConcurrencyLevel	EduBtM/Header/EduBtM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	t	typeref:enum:__anon36
+ConcurrencyLevel	EduOM/Header/EduOM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	t	typeref:enum:__anon39
+DIRTY	EduBfM/Header/EduBfM_Internal.h	120;"	d
+DLType	EduBtM/Header/EduBtM_common.h	/^typedef enum { DL_PAGE, DL_TRAIN, DL_FILE } DLType;$/;"	t	typeref:enum:__anon33
+DLType	EduOM/Header/EduOM_common.h	/^typedef enum { DL_PAGE, DL_TRAIN, DL_FILE } DLType;$/;"	t	typeref:enum:__anon49
+DL_FILE	EduBtM/Header/EduBtM_common.h	/^typedef enum { DL_PAGE, DL_TRAIN, DL_FILE } DLType;$/;"	e	enum:__anon33
+DL_FILE	EduOM/Header/EduOM_common.h	/^typedef enum { DL_PAGE, DL_TRAIN, DL_FILE } DLType;$/;"	e	enum:__anon49
+DL_PAGE	EduBtM/Header/EduBtM_common.h	/^typedef enum { DL_PAGE, DL_TRAIN, DL_FILE } DLType;$/;"	e	enum:__anon33
+DL_PAGE	EduOM/Header/EduOM_common.h	/^typedef enum { DL_PAGE, DL_TRAIN, DL_FILE } DLType;$/;"	e	enum:__anon49
+DL_TRAIN	EduBtM/Header/EduBtM_common.h	/^typedef enum { DL_PAGE, DL_TRAIN, DL_FILE } DLType;$/;"	e	enum:__anon33
+DL_TRAIN	EduOM/Header/EduOM_common.h	/^typedef enum { DL_PAGE, DL_TRAIN, DL_FILE } DLType;$/;"	e	enum:__anon49
+DeallocListElem	EduBtM/Header/EduBtM_common.h	/^typedef struct _DeallocListElem DeallocListElem;$/;"	t	typeref:struct:_DeallocListElem
+DeallocListElem	EduOM/Header/EduOM_common.h	/^typedef struct _DeallocListElem DeallocListElem;$/;"	t	typeref:struct:_DeallocListElem
+EMPTYSLOT	EduOM/Header/EduOM_Internal.h	133;"	d
+END_MACRO	EduBfM/Header/EduBfM_common.h	58;"	d
+END_MACRO	EduBtM/Header/EduBtM_common.h	83;"	d
+END_MACRO	EduOM/Header/EduOM_common.h	65;"	d
+EOS	EduOM/Header/EduOM_common.h	76;"	d
+EQUAL	EduBtM/Header/EduBtM_Internal.h	70;"	d
+EQUALKEY	EduBfM/Header/EduBfM_Internal.h	109;"	d
+EQUAL_FILEID	EduOM/Header/EduOM_common.h	202;"	d
+EQUAL_LOGICALID	EduOM/Header/EduOM_common.h	171;"	d
+EQUAL_PAGEID	EduOM/Header/EduOM_common.h	102;"	d
+ERR	EduBfM/Header/EduBfM_error.h	65;"	d
+ERR	EduBtM/Header/EduBtM_error.h	66;"	d
+ERR	EduOM/Header/EduOM_error.h	65;"	d
+ERRB1	EduBtM/Header/EduBtM_error.h	71;"	d
+ERRB1	EduOM/Header/EduOM_error.h	70;"	d
+ERRB2	EduBtM/Header/EduBtM_error.h	78;"	d
+ERR_BfM	EduBfM/Header/EduBfM_error.h	70;"	d
+ERR_ENCODE_ERROR_CODE	EduBfM/Header/EduBfM_errorcodes.h	52;"	d
+ERR_ENCODE_ERROR_CODE	EduBtM/Header/EduBtM_errorcodes.h	52;"	d
+ERR_ENCODE_ERROR_CODE	EduOM/Header/EduOM_errorcodes.h	52;"	d
+EXEC	EduBfM/Makefile	/^EXEC = EduBfM_Test$/;"	m
+EXEC	EduBtM/Makefile	/^EXEC = EduBtM_Test$/;"	m
+EXEC	EduOM/Makefile	/^EXEC = EduOM_Test$/;"	m
+EduBfM_DiscardAll	EduBfM/EduBfM_DiscardAll.c	/^Four EduBfM_DiscardAll(void)$/;"	f
+EduBfM_DiscardAll	EduBfM/Header/EduBfM_TestModule.h	101;"	d
+EduBfM_FlushAll	EduBfM/EduBfM_FlushAll.c	/^Four EduBfM_FlushAll(void)$/;"	f
+EduBfM_FlushAll	EduBfM/Header/EduBfM_TestModule.h	97;"	d
+EduBfM_FreeTrain	EduBfM/EduBfM_FreeTrain.c	/^Four EduBfM_FreeTrain( $/;"	f
+EduBfM_FreeTrain	EduBfM/Header/EduBfM_TestModule.h	89;"	d
+EduBfM_GetTrain	EduBfM/EduBfM_GetTrain.c	/^Four EduBfM_GetTrain($/;"	f
+EduBfM_GetTrain	EduBfM/Header/EduBfM_TestModule.h	85;"	d
+EduBfM_SetDirty	EduBfM/EduBfM_SetDirty.c	/^Four EduBfM_SetDirty($/;"	f
+EduBfM_SetDirty	EduBfM/Header/EduBfM_TestModule.h	93;"	d
+EduBfM_Test	EduBfM/EduBfM_Test.c	/^Four EduBfM_Test(Four volId)$/;"	f
+EduBtM_CreateIndex	EduBtM/EduBtM_CreateIndex.c	/^Four EduBtM_CreateIndex($/;"	f
+EduBtM_CreateIndex	EduBtM/Header/EduBtM_TestModule.h	81;"	d
+EduBtM_DeleteObject	EduBtM/EduBtM_DeleteObject.c	/^Four EduBtM_DeleteObject($/;"	f
+EduBtM_DeleteObject	EduBtM/Header/EduBtM_TestModule.h	93;"	d
+EduBtM_DropIndex	EduBtM/EduBtM_DropIndex.c	/^Four EduBtM_DropIndex($/;"	f
+EduBtM_DropIndex	EduBtM/Header/EduBtM_TestModule.h	85;"	d
+EduBtM_Fetch	EduBtM/EduBtM_Fetch.c	/^Four EduBtM_Fetch($/;"	f
+EduBtM_Fetch	EduBtM/Header/EduBtM_TestModule.h	97;"	d
+EduBtM_FetchNext	EduBtM/EduBtM_FetchNext.c	/^Four EduBtM_FetchNext($/;"	f
+EduBtM_FetchNext	EduBtM/Header/EduBtM_TestModule.h	101;"	d
+EduBtM_InsertObject	EduBtM/EduBtM_InsertObject.c	/^Four EduBtM_InsertObject($/;"	f
+EduBtM_InsertObject	EduBtM/Header/EduBtM_TestModule.h	89;"	d
+EduBtM_Test	EduBtM/EduBtM_Test.c	/^Four EduBtM_Test(Four volId, Four handle){$/;"	f
+EduOM_CompactPage	EduOM/EduOM_CompactPage.c	/^Four EduOM_CompactPage($/;"	f
+EduOM_CompactPage	EduOM/Header/EduOM_TestModule.h	89;"	d
+EduOM_CreateObject	EduOM/EduOM_CreateObject.c	/^Four EduOM_CreateObject($/;"	f
+EduOM_CreateObject	EduOM/Header/EduOM_TestModule.h	81;"	d
+EduOM_DestroyObject	EduOM/EduOM_DestroyObject.c	/^Four EduOM_DestroyObject($/;"	f
+EduOM_DestroyObject	EduOM/Header/EduOM_TestModule.h	85;"	d
+EduOM_NextObject	EduOM/EduOM_NextObject.c	/^Four EduOM_NextObject($/;"	f
+EduOM_NextObject	EduOM/Header/EduOM_TestModule.h	97;"	d
+EduOM_PrevObject	EduOM/EduOM_PrevObject.c	/^Four EduOM_PrevObject($/;"	f
+EduOM_PrevObject	EduOM/Header/EduOM_TestModule.h	101;"	d
+EduOM_ReadObject	EduOM/EduOM_ReadObject.c	/^Four EduOM_ReadObject($/;"	f
+EduOM_ReadObject	EduOM/Header/EduOM_TestModule.h	93;"	d
+EduOM_Test	EduOM/EduOM_Test.c	/^Four EduOM_Test(Four volId, Four handle){$/;"	f
+Eight	EduBtM/Header/EduBtM_basictypes.h	/^typedef long                    Eight;$/;"	t
+Eight_Invariable	EduBtM/Header/EduBtM_basictypes.h	/^typedef Eight                   Eight_Invariable;$/;"	t
+FALSE	EduBfM/Header/EduBfM_TestModule.h	57;"	d
+FALSE	EduBfM/Header/EduBfM_basictypes.h	/^typedef enum { FALSE, TRUE } Boolean;$/;"	e	enum:__anon58
+FALSE	EduBtM/Header/EduBtM_TestModule.h	60;"	d
+FALSE	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum { FALSE, TRUE } Boolean;$/;"	e	enum:__anon14
+FALSE	EduOM/Header/EduOM_TestModule.h	60;"	d
+FALSE	EduOM/Header/EduOM_basictypes.h	/^typedef enum { FALSE, TRUE } Boolean;$/;"	e	enum:__anon51
+FIRST_PAGE_OBJECT	EduOM/Header/EduOM_TestModule.h	62;"	d
+FREEPAGE	EduBtM/Header/EduBtM_Internal.h	238;"	d
+FileID	EduBtM/Header/EduBtM_common.h	/^typedef LogicalID FileID;$/;"	t
+FileID	EduOM/Header/EduOM_common.h	/^typedef LogicalID FileID;$/;"	t
+Four	EduBfM/Header/EduBfM_basictypes.h	/^typedef int                     Four;$/;"	t
+Four	EduBtM/Header/EduBtM_basictypes.h	/^typedef int                     Four;$/;"	t
+Four	EduOM/Header/EduOM_basictypes.h	/^typedef int                     Four;$/;"	t
+Four_Invariable	EduBfM/Header/EduBfM_basictypes.h	/^typedef Four                    Four_Invariable;$/;"	t
+Four_Invariable	EduBtM/Header/EduBtM_basictypes.h	/^typedef Four                    Four_Invariable;$/;"	t
+Four_Invariable	EduOM/Header/EduOM_basictypes.h	/^typedef Four                    Four_Invariable;$/;"	t
+GENERAL_ERR_BASE	EduBtM/Header/EduBtM_errorcodes.h	57;"	d
+GET_PTR_TO_CATENTRY_FOR_BTREE	EduBtM/Header/EduBtM_Internal.h	303;"	d
+GET_PTR_TO_CATENTRY_FOR_DATA	EduBtM/Header/OM_Internal.h	101;"	d
+GET_PTR_TO_CATENTRY_FOR_DATA	EduOM/Header/EduOM_Internal.h	155;"	d
+GREAT	EduBtM/Header/EduBtM_Internal.h	71;"	d
+GREATER	EduBtM/Header/EduBtM_Internal.h	73;"	d
+HALF_OF_OBJECTS	EduBtM/Header/EduBtM_Internal.h	215;"	d
+HASHTABLESIZE	EduBfM/Header/EduBfM_Internal.h	250;"	d
+HASHTABLESIZE_TO_NBUFS	EduBfM/Header/EduBfM_Internal.h	242;"	d
+INCLUDE	EduBfM/Makefile	/^INCLUDE = .\/Header$/;"	m
+INCLUDE	EduBtM/Makefile	/^INCLUDE = .\/Header$/;"	m
+INCLUDE	EduOM/Makefile	/^INCLUDE = .\/Header$/;"	m
+INTERFACE	EduBfM/Makefile	/^INTERFACE = EduBfM_DiscardAll.o EduBfM_FlushAll.o EduBfM_FreeTrain.o \\$/;"	m
+INTERFACE	EduBtM/Makefile	/^INTERFACE = EduBtM_CreateIndex.o EduBtM_DeleteObject.o EduBtM_DropIndex.o \\$/;"	m
+INTERFACE	EduOM/Makefile	/^INTERFACE = EduOM_CompactPage.o EduOM_CreateObject.o EduOM_DestroyObject.o \\$/;"	m
+INTERNAL	EduBtM/Header/EduBtM_Internal.h	235;"	d
+IS_BAD_BUFFERTYPE	EduBfM/Header/EduBfM_Internal.h	69;"	d
+IS_NILBFMHASHKEY	EduBfM/Header/EduBfM_Internal.h	91;"	d
+IS_NILPAGEID	EduBfM/Header/EduBfM_common.h	101;"	d
+IS_NILPAGEID	EduBtM/Header/EduBtM_common.h	154;"	d
+IS_VALID_OBJECTID	EduOM/Header/EduOM_Internal.h	142;"	d
+IndexID	EduBtM/Header/EduBtM_TestModule.h	/^typedef LogicalID IndexID;$/;"	t
+InternalItem	EduBtM/Header/EduBtM_Internal.h	/^} InternalItem;$/;"	t	typeref:struct:__anon12
+KEYFLAG_UNIQUE	EduBtM/Header/EduBtM_common.h	359;"	d
+KeyDesc	EduBtM/Header/EduBtM_common.h	/^} KeyDesc;$/;"	t	typeref:struct:__anon28
+KeyPart	EduBtM/Header/EduBtM_common.h	/^} KeyPart;$/;"	t	typeref:struct:__anon27
+KeyValue	EduBtM/Header/EduBtM_common.h	/^} KeyValue;$/;"	t	typeref:struct:__anon26
+LAST_PAGE_NUM	EduBfM/Header/EduBfM_TestModule.h	66;"	d
+LBITS	EduBfM/Makefile	/^LBITS := $(shell getconf LONG_BIT)$/;"	m
+LBITS	EduBtM/Makefile	/^LBITS := $(shell getconf LONG_BIT)$/;"	m
+LBITS	EduOM/Makefile	/^LBITS := $(shell getconf LONG_BIT)$/;"	m
+LEAF	EduBtM/Header/EduBtM_Internal.h	236;"	d
+LESS	EduBtM/Header/EduBtM_Internal.h	72;"	d
+LIB	EduBfM/Makefile	/^LIB = -lm$/;"	m
+LIB	EduBtM/Makefile	/^LIB = -lm$/;"	m
+LIB	EduOM/Makefile	/^LIB = -lm$/;"	m
+LOT_LEAF_BUF	EduBfM/Header/EduBfM_Internal.h	61;"	d
+LOT_LEAF_BUF	EduBtM/Header/BfM.h	58;"	d
+LOT_LEAF_BUF	EduOM/Header/BfM.h	58;"	d
+LRGOBJ_THRESHOLD	EduOM/Header/EduOM_Internal.h	146;"	d
+LeafItem	EduBtM/Header/EduBtM_Internal.h	/^} LeafItem;$/;"	t	typeref:struct:__anon13
+LogicalID	EduBtM/Header/EduBtM_common.h	/^} LogicalID;$/;"	t	typeref:struct:__anon22
+LogicalID	EduOM/Header/EduOM_common.h	/^} LogicalID;$/;"	t	typeref:struct:__anon45
+Lsn_T	EduBfM/Header/EduBfM_TestModule.h	/^} Lsn_T;$/;"	t	typeref:struct:Lsn_T_tag
+Lsn_T	EduBtM/Header/EduBtM_common.h	/^} Lsn_T;$/;"	t	typeref:struct:Lsn_T_tag
+Lsn_T	EduOM/Header/EduOM_common.h	/^} Lsn_T;$/;"	t	typeref:struct:Lsn_T_tag
+Lsn_T_tag	EduBfM/Header/EduBfM_TestModule.h	/^typedef struct Lsn_T_tag {$/;"	s
+Lsn_T_tag	EduBtM/Header/EduBtM_common.h	/^typedef struct Lsn_T_tag {$/;"	s
+Lsn_T_tag	EduOM/Header/EduOM_common.h	/^typedef struct Lsn_T_tag {$/;"	s
+MAKE_OBJECTID	EduOM/Header/EduOM_common.h	151;"	d
+MAKE_PAGEID	EduBtM/Header/EduBtM_common.h	151;"	d
+MAKE_PAGEID	EduOM/Header/EduOM_common.h	112;"	d
+MAKE_PHYSICALFILEID	EduBtM/Header/EduBtM_common.h	205;"	d
+MAKE_PHYSICALFILEID	EduOM/Header/EduOM_common.h	187;"	d
+MAX	EduOM/Header/EduOM_common.h	362;"	d
+MAX	EduOM/Header/EduOM_common.h	363;"	d
+MAXKEYLEN	EduBtM/Header/EduBtM_Internal.h	60;"	d
+MAXKEYLEN	EduBtM/Header/EduBtM_common.h	62;"	d
+MAXNUMKEYPARTS	EduBtM/Header/EduBtM_common.h	65;"	d
+MAXPLAYERNAME	EduBtM/Header/EduBtM_TestModule.h	65;"	d
+MAX_DEVICES_IN_VOLUME	EduBfM/Header/EduBfM_TestModule.h	68;"	d
+MAX_DEVICES_IN_VOLUME	EduBtM/Header/EduBtM_TestModule.h	61;"	d
+MAX_DEVICES_IN_VOLUME	EduOM/Header/EduOM_TestModule.h	61;"	d
+MIN	EduBtM/Header/EduBtM_common.h	434;"	d
+MIN	EduBtM/Header/EduBtM_common.h	435;"	d
+MIN_OBJECT_DATA_SIZE	EduBtM/Header/EduBtM_common.h	307;"	d
+MIN_OBJECT_DATA_SIZE	EduOM/Header/EduOM_common.h	282;"	d
+NIL	EduBfM/Header/EduBfM_common.h	63;"	d
+NIL	EduBfM/Header/EduBfM_common.h	64;"	d
+NIL	EduBtM/Header/EduBtM_common.h	100;"	d
+NIL	EduBtM/Header/EduBtM_common.h	101;"	d
+NIL	EduOM/Header/EduOM_common.h	71;"	d
+NIL	EduOM/Header/EduOM_common.h	72;"	d
+NONINTERFACE	EduBfM/Makefile	/^NONINTERFACE = edubfm_AllocTrain.o edubfm_FlushTrain.o edubfm_Hash.o edubfm_ReadTrain.o$/;"	m
+NONINTERFACE	EduBtM/Makefile	/^NONINTERFACE = edubtm_BinarySearch.o edubtm_Compact.o edubtm_Compare.o \\$/;"	m
+NONINTERFACE	EduOM/Makefile	/^NONINTERFACE = eduom_CreateObject.o$/;"	m
+NOTFOUND_IN_HTABLE	EduBfM/Header/EduBfM_Internal.h	253;"	d
+NO_OF_OBJECTS	EduBtM/Header/EduBtM_Internal.h	214;"	d
+NUMOFINSERTEDOBJECT	EduBtM/Header/EduBtM_TestModule.h	63;"	d
+NUMOFPLAYER	EduBtM/Header/EduBtM_TestModule.h	64;"	d
+NUM_BUF_TYPES	EduBfM/Header/EduBfM_Internal.h	57;"	d
+NUM_ERRORS_BFM_ERR_BASE	EduBfM/Header/EduBfM_errorcodes.h	122;"	d
+NUM_ERRORS_BTM_ERR_BASE	EduBtM/Header/EduBtM_errorcodes.h	81;"	d
+NUM_ERRORS_OM_ERR_BASE	EduOM/Header/EduOM_errorcodes.h	72;"	d
+NUM_PAGE_BUFS	EduBfM/Header/EduBfM_TestModule.h	65;"	d
+OBJECTID_SIZE	EduBtM/Header/EduBtM_Internal.h	64;"	d
+OFFSET_OF	EduBtM/Header/EduBtM_common.h	93;"	d
+OID	EduBtM/Header/EduBtM_common.h	/^} OID;$/;"	t	typeref:struct:__anon23
+OM_ERR_BASE	EduOM/Header/EduOM_errorcodes.h	57;"	d
+OVERFLOW	EduBtM/Header/EduBtM_Internal.h	237;"	d
+OVERFLOW_SPLIT	EduBtM/Header/EduBtM_Internal.h	185;"	d
+Object	EduBtM/Header/EduBtM_common.h	/^typedef SmallObject             Object;$/;"	t
+Object	EduOM/Header/EduOM_common.h	/^typedef SmallObject             Object;$/;"	t
+ObjectHdr	EduBtM/Header/EduBtM_common.h	/^} ObjectHdr;$/;"	t	typeref:struct:__anon24
+ObjectHdr	EduOM/Header/EduOM_common.h	/^} ObjectHdr;$/;"	t	typeref:struct:__anon46
+ObjectID	EduBtM/Header/EduBtM_common.h	/^} ObjectID;$/;"	t	typeref:struct:__anon21
+ObjectID	EduOM/Header/EduOM_common.h	/^} ObjectID;$/;"	t	typeref:struct:__anon44
+One	EduBfM/Header/EduBfM_basictypes.h	/^typedef char                    One;$/;"	t
+One	EduBtM/Header/EduBtM_basictypes.h	/^typedef char                    One;$/;"	t
+One	EduOM/Header/EduOM_basictypes.h	/^typedef char                    One;$/;"	t
+One_Invariable	EduBfM/Header/EduBfM_basictypes.h	/^typedef char                    One_Invariable;$/;"	t
+One_Invariable	EduBtM/Header/EduBtM_basictypes.h	/^typedef char                    One_Invariable;$/;"	t
+One_Invariable	EduOM/Header/EduOM_basictypes.h	/^typedef char                    One_Invariable;$/;"	t
+PAGESIZE	EduBfM/Header/EduBfM_common.h	86;"	d
+PAGESIZE	EduBtM/Header/EduBtM_common.h	69;"	d
+PAGESIZE	EduOM/Header/EduOM_common.h	60;"	d
+PAGESIZE2	EduBfM/Header/EduBfM_TestModule.h	58;"	d
+PAGESIZE2	EduBtM/Header/EduBtM_common.h	70;"	d
+PAGESIZE2	EduOM/Header/EduOM_common.h	61;"	d
+PAGE_BUF	EduBfM/Header/EduBfM_Internal.h	60;"	d
+PAGE_BUF	EduBtM/Header/BfM.h	57;"	d
+PAGE_BUF	EduOM/Header/BfM.h	57;"	d
+PAGE_BUFS_CLOCKALG	EduBfM/Header/EduBfM_TestModule.h	67;"	d
+PAGE_TYPE_VECTOR_MASK	EduBtM/Header/EduBtM_common.h	268;"	d
+PAGE_TYPE_VECTOR_MASK	EduOM/Header/EduOM_common.h	245;"	d
+PAGE_TYPE_VECTOR_RESET_MASK	EduBtM/Header/EduBtM_common.h	269;"	d
+PAGE_TYPE_VECTOR_RESET_MASK	EduOM/Header/EduOM_common.h	246;"	d
+PRINT_PAGEID	EduBfM/Header/EduBfM_common.h	109;"	d
+PRINT_TRAINID	EduBfM/Header/EduBfM_common.h	118;"	d
+PRTERR	EduBfM/Header/EduBfM_error.h	60;"	d
+PRTERR	EduBtM/Header/EduBtM_error.h	61;"	d
+PRTERR	EduOM/Header/EduOM_error.h	60;"	d
+P_CLEAR	EduOM/Header/EduOM_common.h	312;"	d
+P_FORWARDED	EduOM/Header/EduOM_common.h	316;"	d
+P_LRGOBJ	EduOM/Header/EduOM_common.h	313;"	d
+P_LRGOBJ_ROOTWITHHDR	EduOM/Header/EduOM_common.h	314;"	d
+P_MOVED	EduOM/Header/EduOM_common.h	315;"	d
+Page	EduBfM/Header/EduBfM_TestModule.h	/^} Page;$/;"	t	typeref:struct:Page_tag
+Page	EduBtM/Header/EduBtM_common.h	/^} Page;$/;"	t	typeref:struct:Page_tag
+Page	EduOM/Header/EduOM_common.h	/^} Page;$/;"	t	typeref:struct:Page_tag
+PageHdr	EduBfM/Header/EduBfM_TestModule.h	/^} PageHdr;$/;"	t	typeref:struct:PageHdr_T_tag
+PageHdr	EduBtM/Header/EduBtM_common.h	/^} PageHdr;$/;"	t	typeref:struct:PageHdr_T_tag
+PageHdr	EduOM/Header/EduOM_common.h	/^} PageHdr;$/;"	t	typeref:struct:PageHdr_T_tag
+PageHdr_T_tag	EduBfM/Header/EduBfM_TestModule.h	/^typedef struct PageHdr_T_tag {$/;"	s
+PageHdr_T_tag	EduBtM/Header/EduBtM_common.h	/^typedef struct PageHdr_T_tag {$/;"	s
+PageHdr_T_tag	EduOM/Header/EduOM_common.h	/^typedef struct PageHdr_T_tag {$/;"	s
+PageID	EduBfM/Header/EduBfM_common.h	/^} PageID;$/;"	t	typeref:struct:__anon54
+PageID	EduBtM/Header/EduBtM_common.h	/^} PageID;$/;"	t	typeref:struct:__anon20
+PageID	EduOM/Header/EduOM_common.h	/^} PageID;$/;"	t	typeref:struct:__anon43
+PageNo	EduBfM/Header/EduBfM_common.h	/^typedef Four PageNo;$/;"	t
+PageNo	EduBtM/Header/EduBtM_common.h	/^typedef Four PageNo;$/;"	t
+PageNo	EduOM/Header/EduOM_common.h	/^typedef Four PageNo;$/;"	t
+Page_tag	EduBfM/Header/EduBfM_TestModule.h	/^typedef struct Page_tag {$/;"	s
+Page_tag	EduBtM/Header/EduBtM_common.h	/^typedef struct Page_tag {$/;"	s
+Page_tag	EduOM/Header/EduOM_common.h	/^typedef struct Page_tag {$/;"	s
+PhysicalFileID	EduBtM/Header/EduBtM_common.h	/^typedef PageID  PhysicalFileID;     \/* use the first Page's PageID as the physical FileID *\/$/;"	t
+PhysicalFileID	EduOM/Header/EduOM_common.h	/^typedef PageID  PhysicalFileID;     \/* use the first Page's PageID as the physical FileID *\/$/;"	t
+PhysicalIndexID	EduBtM/Header/EduBtM_TestModule.h	/^typedef PageID  PhysicalIndexID;  \/* use the root Page's PageID as the physical IndexID *\/$/;"	t
+Pool	EduBtM/Header/Util_pool.h	/^typedef struct _Pool Pool;$/;"	t	typeref:struct:_Pool
+Pool	EduOM/Header/Util_pool.h	/^typedef struct _Pool Pool;$/;"	t	typeref:struct:_Pool
+REFER	EduBfM/Header/EduBfM_Internal.h	122;"	d
+REMAINDER	EduOM/Header/EduOM_common.h	80;"	d
+RESET_PAGE_TYPE	EduBtM/Header/EduBtM_common.h	278;"	d
+RESET_PAGE_TYPE	EduOM/Header/EduOM_common.h	255;"	d
+RM	EduBfM/Makefile	/^RM = \/bin\/rm$/;"	m
+RM	EduBtM/Makefile	/^RM = \/bin\/rm$/;"	m
+RM	EduOM/Makefile	/^RM = \/bin\/rm$/;"	m
+RM_IS_ROLLBACK_REQUIRED	EduBfM/Header/RM.h	56;"	d
+ROOT	EduBtM/Header/EduBtM_Internal.h	234;"	d
+SET_DUMP_PAGE	EduOM/Header/EduOM_TestModule.h	65;"	d
+SET_NILBFMHASHKEY	EduBfM/Header/EduBfM_Internal.h	83;"	d
+SET_NILPAGEID	EduBfM/Header/EduBfM_common.h	93;"	d
+SET_PAGE_TYPE	EduBtM/Header/EduBtM_common.h	286;"	d
+SET_PAGE_TYPE	EduOM/Header/EduOM_common.h	263;"	d
+SLOTTED_PAGE_TYPE	EduOM/Header/EduOM_common.h	248;"	d
+SM_BOF	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum {SM_EQ=0x1, SM_LT=0x2, SM_LE=0x3, SM_GT=0x4, SM_GE=0x5, SM_NE=0x6, SM_EOF=0x10, SM_BOF=0x20} CompOp;$/;"	e	enum:__anon15
+SM_DOUBLE	EduBtM/Header/EduBtM_common.h	111;"	d
+SM_DOUBLE_SIZE	EduBtM/Header/EduBtM_common.h	125;"	d
+SM_EOF	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum {SM_EQ=0x1, SM_LT=0x2, SM_LE=0x3, SM_GT=0x4, SM_GE=0x5, SM_NE=0x6, SM_EOF=0x10, SM_BOF=0x20} CompOp;$/;"	e	enum:__anon15
+SM_EQ	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum {SM_EQ=0x1, SM_LT=0x2, SM_LE=0x3, SM_GT=0x4, SM_GE=0x5, SM_NE=0x6, SM_EOF=0x10, SM_BOF=0x20} CompOp;$/;"	e	enum:__anon15
+SM_FILEID	EduBtM/Header/EduBtM_common.h	115;"	d
+SM_FILEID_SIZE	EduBtM/Header/EduBtM_common.h	128;"	d
+SM_FLOAT	EduBtM/Header/EduBtM_common.h	110;"	d
+SM_FLOAT_SIZE	EduBtM/Header/EduBtM_common.h	124;"	d
+SM_GE	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum {SM_EQ=0x1, SM_LT=0x2, SM_LE=0x3, SM_GT=0x4, SM_GE=0x5, SM_NE=0x6, SM_EOF=0x10, SM_BOF=0x20} CompOp;$/;"	e	enum:__anon15
+SM_GT	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum {SM_EQ=0x1, SM_LT=0x2, SM_LE=0x3, SM_GT=0x4, SM_GE=0x5, SM_NE=0x6, SM_EOF=0x10, SM_BOF=0x20} CompOp;$/;"	e	enum:__anon15
+SM_INDEXID	EduBtM/Header/EduBtM_common.h	116;"	d
+SM_INDEXID_SIZE	EduBtM/Header/EduBtM_common.h	127;"	d
+SM_INT	EduBtM/Header/EduBtM_common.h	108;"	d
+SM_INT_SIZE	EduBtM/Header/EduBtM_common.h	121;"	d
+SM_LE	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum {SM_EQ=0x1, SM_LT=0x2, SM_LE=0x3, SM_GT=0x4, SM_GE=0x5, SM_NE=0x6, SM_EOF=0x10, SM_BOF=0x20} CompOp;$/;"	e	enum:__anon15
+SM_LONG	EduBtM/Header/EduBtM_common.h	109;"	d
+SM_LONG_LONG	EduBtM/Header/EduBtM_common.h	119;"	d
+SM_LONG_LONG_SIZE	EduBtM/Header/EduBtM_common.h	123;"	d
+SM_LONG_SIZE	EduBtM/Header/EduBtM_common.h	122;"	d
+SM_LT	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum {SM_EQ=0x1, SM_LT=0x2, SM_LE=0x3, SM_GT=0x4, SM_GE=0x5, SM_NE=0x6, SM_EOF=0x10, SM_BOF=0x20} CompOp;$/;"	e	enum:__anon15
+SM_NE	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum {SM_EQ=0x1, SM_LT=0x2, SM_LE=0x3, SM_GT=0x4, SM_GE=0x5, SM_NE=0x6, SM_EOF=0x10, SM_BOF=0x20} CompOp;$/;"	e	enum:__anon15
+SM_OID	EduBtM/Header/EduBtM_common.h	117;"	d
+SM_OID_SIZE	EduBtM/Header/EduBtM_common.h	129;"	d
+SM_PAGEID	EduBtM/Header/EduBtM_common.h	114;"	d
+SM_PAGEID_SIZE	EduBtM/Header/EduBtM_common.h	126;"	d
+SM_SHORT	EduBtM/Header/EduBtM_common.h	107;"	d
+SM_SHORT_SIZE	EduBtM/Header/EduBtM_common.h	120;"	d
+SM_STRING	EduBtM/Header/EduBtM_common.h	112;"	d
+SM_TMPFILEIDTABLE	EduBtM/Header/SM_Internal.h	54;"	d
+SM_TMPFILEIDTABLE	EduOM/Header/SM_Internal.h	60;"	d
+SM_VARSTRING	EduBtM/Header/EduBtM_common.h	113;"	d
+SP_10SIZE	EduOM/Header/EduOM_Internal.h	124;"	d
+SP_20SIZE	EduOM/Header/EduOM_Internal.h	125;"	d
+SP_30SIZE	EduOM/Header/EduOM_Internal.h	126;"	d
+SP_40SIZE	EduOM/Header/EduOM_Internal.h	127;"	d
+SP_50SIZE	EduOM/Header/EduOM_Internal.h	128;"	d
+SP_CFREE	EduOM/Header/EduOM_Internal.h	121;"	d
+SP_FIXED	EduBtM/Header/OM_Internal.h	92;"	d
+SP_FIXED	EduOM/Header/EduOM_Internal.h	93;"	d
+SP_FREE	EduOM/Header/EduOM_Internal.h	113;"	d
+Serial	EduBtM/Header/EduBtM_common.h	/^typedef Four Serial;$/;"	t
+Serial	EduOM/Header/EduOM_common.h	/^typedef Four Serial;$/;"	t
+ShortPageID	EduBtM/Header/EduBtM_common.h	/^typedef PageNo ShortPageID;$/;"	t
+ShortPageID	EduOM/Header/EduOM_common.h	/^typedef PageNo ShortPageID;$/;"	t
+SlotNo	EduBtM/Header/EduBtM_common.h	/^typedef Two SlotNo;$/;"	t
+SlotNo	EduOM/Header/EduOM_common.h	/^typedef Two SlotNo;$/;"	t
+SlottedPage	EduBtM/Header/OM_Internal.h	/^} SlottedPage;$/;"	t	typeref:struct:__anon18
+SlottedPage	EduOM/Header/EduOM_Internal.h	/^} SlottedPage;$/;"	t	typeref:struct:__anon42
+SlottedPageHdr	EduBtM/Header/OM_Internal.h	/^} SlottedPageHdr;$/;"	t	typeref:struct:__anon17
+SlottedPageHdr	EduOM/Header/EduOM_Internal.h	/^} SlottedPageHdr;$/;"	t	typeref:struct:__anon41
+SlottedPageSlot	EduBtM/Header/OM_Internal.h	/^} SlottedPageSlot;$/;"	t	typeref:struct:__anon16
+SlottedPageSlot	EduOM/Header/EduOM_Internal.h	/^} SlottedPageSlot;$/;"	t	typeref:struct:__anon40
+SmallObject	EduBtM/Header/EduBtM_common.h	/^} SmallObject;$/;"	t	typeref:struct:__anon25
+SmallObject	EduOM/Header/EduOM_common.h	/^} SmallObject;$/;"	t	typeref:struct:__anon47
+SubpoolHdr	EduBtM/Header/Util_pool.h	/^typedef struct _SubpoolHdr SubpoolHdr;$/;"	t	typeref:struct:_SubpoolHdr
+SubpoolHdr	EduOM/Header/Util_pool.h	/^typedef struct _SubpoolHdr SubpoolHdr;$/;"	t	typeref:struct:_SubpoolHdr
+TESTMODULE	EduBfM/Makefile	/^TESTMODULE = EduBfM_Test.o EduBfM_TestModule.o$/;"	m
+TESTMODULE	EduBtM/Makefile	/^TESTMODULE = EduBtM_Test.o EduBtM_TestModule.o$/;"	m
+TESTMODULE	EduOM/Makefile	/^TESTMODULE = EduOM_Test.o EduOM_TestModule.o$/;"	m
+THIRD_PAGE_OBJECT	EduOM/Header/EduOM_TestModule.h	63;"	d
+TRUE	EduBfM/Header/EduBfM_TestModule.h	56;"	d
+TRUE	EduBfM/Header/EduBfM_basictypes.h	/^typedef enum { FALSE, TRUE } Boolean;$/;"	e	enum:__anon58
+TRUE	EduBtM/Header/EduBtM_TestModule.h	59;"	d
+TRUE	EduBtM/Header/EduBtM_basictypes.h	/^typedef enum { FALSE, TRUE } Boolean;$/;"	e	enum:__anon14
+TRUE	EduOM/Header/EduOM_TestModule.h	59;"	d
+TRUE	EduOM/Header/EduOM_basictypes.h	/^typedef enum { FALSE, TRUE } Boolean;$/;"	e	enum:__anon51
+TrainID	EduBfM/Header/EduBfM_common.h	/^typedef PageID TrainID;		\/* use its first page's PageID as the TrainID *\/$/;"	t
+TrainID	EduBtM/Header/EduBtM_common.h	/^typedef PageID TrainID;     \/* use its first page's PageID as the TrainID *\/$/;"	t
+TrainID	EduOM/Header/EduOM_common.h	/^typedef PageID TrainID;     \/* use its first page's PageID as the TrainID *\/$/;"	t
+Two	EduBfM/Header/EduBfM_basictypes.h	/^typedef short                   Two;$/;"	t
+Two	EduBtM/Header/EduBtM_basictypes.h	/^typedef short                   Two;$/;"	t
+Two	EduOM/Header/EduOM_basictypes.h	/^typedef short                   Two;$/;"	t
+Two_Invariable	EduBfM/Header/EduBfM_basictypes.h	/^typedef Two                     Two_Invariable;$/;"	t
+Two_Invariable	EduBtM/Header/EduBtM_basictypes.h	/^typedef Two                     Two_Invariable;$/;"	t
+Two_Invariable	EduOM/Header/EduOM_basictypes.h	/^typedef Two                     Two_Invariable;$/;"	t
+UEight	EduBtM/Header/EduBtM_basictypes.h	/^typedef unsigned long           UEight;$/;"	t
+UEight_Invariable	EduBtM/Header/EduBtM_basictypes.h	/^typedef UEight                  UEight_Invariable;$/;"	t
+UFour	EduBfM/Header/EduBfM_basictypes.h	/^typedef unsigned int            UFour;$/;"	t
+UFour	EduBtM/Header/EduBtM_basictypes.h	/^typedef unsigned int            UFour;$/;"	t
+UFour	EduOM/Header/EduOM_basictypes.h	/^typedef unsigned int            UFour;$/;"	t
+UFour_Invariable	EduBfM/Header/EduBfM_basictypes.h	/^typedef UFour                   UFour_Invariable;$/;"	t
+UFour_Invariable	EduBtM/Header/EduBtM_basictypes.h	/^typedef UFour                   UFour_Invariable;$/;"	t
+UFour_Invariable	EduOM/Header/EduOM_basictypes.h	/^typedef UFour                   UFour_Invariable;$/;"	t
+UOne	EduBfM/Header/EduBfM_basictypes.h	/^typedef unsigned char           UOne;$/;"	t
+UOne	EduBtM/Header/EduBtM_basictypes.h	/^typedef unsigned char           UOne;$/;"	t
+UOne	EduOM/Header/EduOM_basictypes.h	/^typedef unsigned char           UOne;$/;"	t
+UOne_Invariable	EduBfM/Header/EduBfM_basictypes.h	/^typedef unsigned char           UOne_Invariable;$/;"	t
+UOne_Invariable	EduBtM/Header/EduBtM_basictypes.h	/^typedef unsigned char           UOne_Invariable;$/;"	t
+UOne_Invariable	EduOM/Header/EduOM_basictypes.h	/^typedef unsigned char           UOne_Invariable;$/;"	t
+UTwo	EduBfM/Header/EduBfM_basictypes.h	/^typedef unsigned short          UTwo;$/;"	t
+UTwo	EduBtM/Header/EduBtM_basictypes.h	/^typedef unsigned short          UTwo;$/;"	t
+UTwo	EduOM/Header/EduOM_basictypes.h	/^typedef unsigned short          UTwo;$/;"	t
+UTwo_Invariable	EduBfM/Header/EduBfM_basictypes.h	/^typedef UTwo                    UTwo_Invariable;$/;"	t
+UTwo_Invariable	EduBtM/Header/EduBtM_basictypes.h	/^typedef UTwo                    UTwo_Invariable;$/;"	t
+UTwo_Invariable	EduOM/Header/EduOM_basictypes.h	/^typedef UTwo                    UTwo_Invariable;$/;"	t
+Unique	EduBtM/Header/EduBtM_common.h	/^typedef UFour Unique;$/;"	t
+Unique	EduOM/Header/EduOM_common.h	/^typedef UFour Unique;$/;"	t
+VALID	EduBfM/Header/EduBfM_Internal.h	121;"	d
+VarArray	EduBtM/Header/EduBtM_common.h	/^} VarArray;$/;"	t	typeref:struct:__anon19
+VarArray	EduOM/Header/Util_varArray.h	/^} VarArray;$/;"	t	typeref:struct:__anon37
+VolID	EduBtM/Header/EduBtM_common.h	/^typedef VolNo VolID;$/;"	t
+VolID	EduOM/Header/EduOM_common.h	/^typedef VolNo VolID;$/;"	t
+VolNo	EduBfM/Header/EduBfM_common.h	/^typedef Two VolNo;$/;"	t
+VolNo	EduBtM/Header/EduBtM_common.h	/^typedef Two VolNo;$/;"	t
+VolNo	EduOM/Header/EduOM_common.h	/^typedef Two VolNo;$/;"	t
+X_BROWSE_BROWSE	EduBfM/Header/EduBfM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon53
+X_BROWSE_BROWSE	EduBtM/Header/EduBtM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon36
+X_BROWSE_BROWSE	EduOM/Header/EduOM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon39
+X_CS_BROWSE	EduBfM/Header/EduBfM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon53
+X_CS_BROWSE	EduBtM/Header/EduBtM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon36
+X_CS_BROWSE	EduOM/Header/EduOM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon39
+X_CS_CS	EduBfM/Header/EduBfM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon53
+X_CS_CS	EduBtM/Header/EduBtM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon36
+X_CS_CS	EduOM/Header/EduOM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon39
+X_RR_BROWSE	EduBfM/Header/EduBfM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon53
+X_RR_BROWSE	EduBtM/Header/EduBtM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon36
+X_RR_BROWSE	EduOM/Header/EduOM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon39
+X_RR_CS	EduBfM/Header/EduBfM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon53
+X_RR_CS	EduBtM/Header/EduBtM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon36
+X_RR_CS	EduOM/Header/EduOM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon39
+X_RR_RR	EduBfM/Header/EduBfM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon53
+X_RR_RR	EduBtM/Header/EduBtM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon36
+X_RR_RR	EduOM/Header/EduOM_TestModule.h	/^typedef enum { X_BROWSE_BROWSE, X_CS_BROWSE, X_CS_CS, X_RR_BROWSE, X_RR_CS, X_RR_RR } ConcurrencyLevel; \/* isolation degree *\/$/;"	e	enum:__anon39
+XactID	EduBfM/Header/EduBfM_TestModule.h	/^} XactID;$/;"	t	typeref:struct:__anon52
+XactID	EduBtM/Header/EduBtM_TestModule.h	/^} XactID;$/;"	t	typeref:struct:__anon35
+XactID	EduOM/Header/EduOM_TestModule.h	/^} XactID;$/;"	t	typeref:struct:__anon38
+_BFM_H_	EduBtM/Header/BfM.h	50;"	d
+_BFM_H_	EduOM/Header/BfM.h	50;"	d
+_DeallocListElem	EduBtM/Header/EduBtM_common.h	/^struct _DeallocListElem {$/;"	s
+_DeallocListElem	EduOM/Header/EduOM_common.h	/^struct _DeallocListElem {$/;"	s
+_EDUBFM_BASICTYPES_H_	EduBfM/Header/EduBfM_basictypes.h	50;"	d
+_EDUBFM_COMMON_H_	EduBfM/Header/EduBfM_common.h	50;"	d
+_EDUBFM_DISCARDALL_	EduBfM/Header/EduBfM_TestModule.h	80;"	d
+_EDUBFM_FLUSHALL_	EduBfM/Header/EduBfM_TestModule.h	79;"	d
+_EDUBFM_FREETRAIN_	EduBfM/Header/EduBfM_TestModule.h	77;"	d
+_EDUBFM_GETTRAIN_	EduBfM/Header/EduBfM_TestModule.h	76;"	d
+_EDUBFM_H_	EduBfM/Header/EduBfM.h	50;"	d
+_EDUBFM_INTERNAL_H_	EduBfM/Header/EduBfM_Internal.h	50;"	d
+_EDUBFM_SETDIRTY_	EduBfM/Header/EduBfM_TestModule.h	78;"	d
+_EDUBFM_TESTMODULE_H_	EduBfM/Header/EduBfM_TestModule.h	50;"	d
+_EDUBTM_BASICTYPES_H_	EduBtM/Header/EduBtM_basictypes.h	50;"	d
+_EDUBTM_COMMON_H_	EduBtM/Header/EduBtM_common.h	50;"	d
+_EDUBTM_CREATEINDEX_	EduBtM/Header/EduBtM_TestModule.h	71;"	d
+_EDUBTM_DELETEOBJECT_	EduBtM/Header/EduBtM_TestModule.h	74;"	d
+_EDUBTM_DROPINDEX_	EduBtM/Header/EduBtM_TestModule.h	72;"	d
+_EDUBTM_FETCHNEXT_	EduBtM/Header/EduBtM_TestModule.h	76;"	d
+_EDUBTM_FETCH_	EduBtM/Header/EduBtM_TestModule.h	75;"	d
+_EDUBTM_H_	EduBtM/Header/EduBtM.h	50;"	d
+_EDUBTM_INSERTOBJECT_	EduBtM/Header/EduBtM_TestModule.h	73;"	d
+_EDUBTM_INTERNAL_H_	EduBtM/Header/EduBtM_Internal.h	50;"	d
+_EDUBTM_TESTMODULE_H_	EduBtM/Header/EduBtM_TestModule.h	50;"	d
+_EDUOM_BASICTYPES_H_	EduOM/Header/EduOM_basictypes.h	50;"	d
+_EDUOM_COMMON_H_	EduOM/Header/EduOM_common.h	50;"	d
+_EDUOM_COMPACTPAGE_	EduOM/Header/EduOM_TestModule.h	73;"	d
+_EDUOM_CREATEOBJECT_	EduOM/Header/EduOM_TestModule.h	71;"	d
+_EDUOM_DESTROYOBJECT_	EduOM/Header/EduOM_TestModule.h	72;"	d
+_EDUOM_H_	EduOM/Header/EduOM.h	50;"	d
+_EDUOM_INTERNAL_H_	EduOM/Header/EduOM_Internal.h	50;"	d
+_EDUOM_NEXTOBJECT_	EduOM/Header/EduOM_TestModule.h	75;"	d
+_EDUOM_PREVOBJECT_	EduOM/Header/EduOM_TestModule.h	76;"	d
+_EDUOM_READOBJECT_	EduOM/Header/EduOM_TestModule.h	74;"	d
+_EDUOM_TESTMODULE_H_	EduOM/Header/EduOM_TestModule.h	50;"	d
+_LOT_H_	EduOM/Header/LOT.h	50;"	d
+_OM_INTERNAL_H_	EduBtM/Header/OM_Internal.h	50;"	d
+_Pool	EduBtM/Header/Util_pool.h	/^struct _Pool {$/;"	s
+_Pool	EduOM/Header/Util_pool.h	/^struct _Pool {$/;"	s
+_RDsM_H_	EduBfM/Header/RDsM.h	50;"	d
+_RDsM_H_	EduBtM/Header/RDsM.h	50;"	d
+_RDsM_H_	EduOM/Header/RDsM.h	50;"	d
+_RM_H_	EduBfM/Header/RM.h	50;"	d
+_SM_INTERNAL_H_	EduBtM/Header/SM_Internal.h	50;"	d
+_SM_INTERNAL_H_	EduOM/Header/SM_Internal.h	50;"	d
+_SubpoolHdr	EduBtM/Header/Util_pool.h	/^struct _SubpoolHdr {$/;"	s
+_SubpoolHdr	EduOM/Header/Util_pool.h	/^struct _SubpoolHdr {$/;"	s
+_UTIL_ERRORLOG_H_	EduBfM/Header/Util_errorLog.h	50;"	d
+_UTIL_ERRORLOG_H_	EduBtM/Header/Util_errorLog.h	50;"	d
+_UTIL_ERRORLOG_H_	EduOM/Header/Util_errorLog.h	50;"	d
+_UTIL_H_	EduBtM/Header/Util.h	50;"	d
+_UTIL_H_	EduOM/Header/Util.h	50;"	d
+_UTIL_POOL_H_	EduBtM/Header/Util_pool.h	50;"	d
+_UTIL_POOL_H_	EduOM/Header/Util_pool.h	50;"	d
+_UTIL_VARARRAY_H_	EduOM/Header/Util_varArray.h	50;"	d
+__EDUBFM_ERROR_H__	EduBfM/Header/EduBfM_error.h	50;"	d
+__EDUBTM_ERROR_H__	EduBtM/Header/EduBtM_error.h	50;"	d
+__EDUOM_ERROR_H__	EduOM/Header/EduOM_error.h	50;"	d
+any	EduBtM/Header/EduBtM_Internal.h	/^	BtreeAny      any;      \/* btree any page *\/$/;"	m	union:__anon9
+availSpaceList10	EduBtM/Header/EduBtM_common.h	/^	ShortPageID availSpaceList10;$/;"	m	struct:__anon30
+availSpaceList10	EduOM/Header/EduOM_common.h	/^	ShortPageID availSpaceList10;$/;"	m	struct:__anon48
+availSpaceList20	EduBtM/Header/EduBtM_common.h	/^	ShortPageID availSpaceList20;$/;"	m	struct:__anon30
+availSpaceList20	EduOM/Header/EduOM_common.h	/^	ShortPageID availSpaceList20;$/;"	m	struct:__anon48
+availSpaceList30	EduBtM/Header/EduBtM_common.h	/^	ShortPageID availSpaceList30;$/;"	m	struct:__anon30
+availSpaceList30	EduOM/Header/EduOM_common.h	/^	ShortPageID availSpaceList30;$/;"	m	struct:__anon48
+availSpaceList40	EduBtM/Header/EduBtM_common.h	/^	ShortPageID availSpaceList40;$/;"	m	struct:__anon30
+availSpaceList40	EduOM/Header/EduOM_common.h	/^	ShortPageID availSpaceList40;$/;"	m	struct:__anon48
+availSpaceList50	EduBtM/Header/EduBtM_common.h	/^	ShortPageID availSpaceList50;$/;"	m	struct:__anon30
+availSpaceList50	EduOM/Header/EduOM_common.h	/^	ShortPageID availSpaceList50;$/;"	m	struct:__anon48
+bi	EduBtM/Header/EduBtM_Internal.h	/^	BtreeInternal bi;       \/* btree internal page *\/$/;"	m	union:__anon9
+bits	EduBfM/Header/EduBfM_Internal.h	/^    One    	bits;		\/* bit 1 : DIRTY, bit 2 : VALID, bit 3 : REFER, bit 4 : NEW *\/$/;"	m	struct:__anon56
+bl	EduBtM/Header/EduBtM_Internal.h	/^	BtreeLeaf     bl;       \/* btree leaf page *\/$/;"	m	union:__anon9
+bo	EduBtM/Header/EduBtM_Internal.h	/^	BtreeOverflow bo;       \/* btree overflow page *\/$/;"	m	union:__anon9
+btm_InternalEntry	EduBtM/Header/EduBtM_Internal.h	/^} btm_InternalEntry;$/;"	t	typeref:struct:__anon10
+btm_LeafEntry	EduBtM/Header/EduBtM_Internal.h	/^} btm_LeafEntry;$/;"	t	typeref:struct:__anon11
+btree	EduBtM/Header/EduBtM_common.h	/^	sm_CatOverlayForBtree btree;$/;"	m	struct:__anon32
+bufSize	EduBfM/Header/EduBfM_Internal.h	/^    Two                 bufSize;        \/* size of a buffer in page size *\/$/;"	m	struct:__anon57
+bufTable	EduBfM/Header/EduBfM_Internal.h	/^    BufferTable*	 	bufTable;$/;"	m	struct:__anon57
+bufferPool	EduBfM/Header/EduBfM_Internal.h	/^    char*		 		bufferPool;	\/* a set of buffers *\/$/;"	m	struct:__anon57
+classID	EduBtM/Header/EduBtM_common.h	/^	ClassID classID;        \/* specify the class including the object *\/$/;"	m	struct:__anon23
+count	EduBtM/Header/Util_pool.h	/^    Four 		count;			\/* # of elements in the freed list *\/\/* YRK22JUL2003-2 *\/$/;"	m	struct:_SubpoolHdr
+count	EduOM/Header/Util_pool.h	/^    Four 		count;			\/* # of elements in the freed list *\/\/* YRK22JUL2003-2 *\/$/;"	m	struct:_SubpoolHdr
+data	EduBfM/Header/EduBfM_TestModule.h	/^    char data[PAGESIZE-sizeof(PageHdr)];$/;"	m	struct:Page_tag
+data	EduBtM/Header/EduBtM_Internal.h	/^	char            data[PAGESIZE-BI_FIXED];  \/* data area *\/$/;"	m	struct:__anon4
+data	EduBtM/Header/EduBtM_Internal.h	/^	char     data[PAGESIZE-BL_FIXED]; \/* data area *\/$/;"	m	struct:__anon6
+data	EduBtM/Header/EduBtM_Internal.h	/^	char    data[PAGESIZE-BANY_FIXED]; \/* data area *\/$/;"	m	struct:__anon2
+data	EduBtM/Header/EduBtM_common.h	/^	char        data[MIN_OBJECT_DATA_SIZE]; \/* data area *\/$/;"	m	struct:__anon25
+data	EduBtM/Header/EduBtM_common.h	/^	char data[PAGESIZE-sizeof(PageHdr)];$/;"	m	struct:Page_tag
+data	EduBtM/Header/EduBtM_common.h	/^	sm_CatOverlayForData  data;$/;"	m	struct:__anon32
+data	EduBtM/Header/OM_Internal.h	/^    char data[PAGESIZE-SP_FIXED]; \/* data area *\/$/;"	m	struct:__anon18
+data	EduOM/Header/EduOM_Internal.h	/^	char data[PAGESIZE-SP_FIXED]; \/* data area *\/$/;"	m	struct:__anon42
+data	EduOM/Header/EduOM_common.h	/^	char        data[MIN_OBJECT_DATA_SIZE]; \/* data area *\/$/;"	m	struct:__anon47
+data	EduOM/Header/EduOM_common.h	/^	char data[PAGESIZE-sizeof(PageHdr)];$/;"	m	struct:Page_tag
+dlHead	EduBtM/Header/EduBtM_TestModule.h	/^DeallocListElem dlHead;$/;"	v
+dlHead	EduOM/Header/EduOM_TestModule.h	/^DeallocListElem dlHead;$/;"	v
+dummy_fill	EduBtM/Header/EduBtM_Internal.h	/^	char            dummy_fill[BO_DUMMY]; \/* dummy fill area *\/$/;"	m	struct:__anon8
+dumpBtreePage	EduBtM/EduBtM_Test.c	/^Four dumpBtreePage($/;"	f
+dumpInternal	EduBtM/EduBtM_Test.c	/^void dumpInternal($/;"	f
+dumpLeaf	EduBtM/EduBtM_Test.c	/^void dumpLeaf($/;"	f
+dumpOverflow	EduBtM/EduBtM_Test.c	/^void dumpOverflow($/;"	f
+eALREADYMOUNTEDCOHERENCYVOLUME_BFM	EduBfM/Header/EduBfM_errorcodes.h	73;"	d
+eBADBTREEPAGE_BTM	EduBtM/Header/EduBtM_errorcodes.h	69;"	d
+eBADBUFFERTYPE_BFM	EduBfM/Header/EduBfM_errorcodes.h	62;"	d
+eBADBUFFER_BFM	EduBfM/Header/EduBfM_errorcodes.h	64;"	d
+eBADBUFINDEX_BFM	EduBfM/Header/EduBfM_errorcodes.h	70;"	d
+eBADBUFTBLENTRY_BFM	EduBfM/Header/EduBfM_errorcodes.h	66;"	d
+eBADCACHETREELATCHCELLPTR_BTM	EduBtM/Header/EduBtM_errorcodes.h	80;"	d
+eBADCATALOGOBJECT_OM	EduOM/Header/EduOM_errorcodes.h	64;"	d
+eBADCOMPOP_BTM	EduBtM/Header/EduBtM_errorcodes.h	73;"	d
+eBADCURSOR	EduBtM/Header/EduBtM_errorcodes.h	63;"	d
+eBADFILEID_OM	EduOM/Header/EduOM_errorcodes.h	67;"	d
+eBADHASHKEY_BFM	EduBfM/Header/EduBfM_errorcodes.h	65;"	d
+eBADLATCHCONVERSION_BFM	EduBfM/Header/EduBfM_errorcodes.h	94;"	d
+eBADLATCHMODE_BFM	EduBfM/Header/EduBfM_errorcodes.h	63;"	d
+eBADLENGTH_OM	EduOM/Header/EduOM_errorcodes.h	65;"	d
+eBADOBJECTID_OM	EduOM/Header/EduOM_errorcodes.h	63;"	d
+eBADPAGEID_OM	EduOM/Header/EduOM_errorcodes.h	69;"	d
+eBADPAGETYPE_BTM	EduBtM/Header/EduBtM_errorcodes.h	75;"	d
+eBADPAGE_BTM	EduBtM/Header/EduBtM_errorcodes.h	70;"	d
+eBADPARAMETER_BTM	EduBtM/Header/EduBtM_errorcodes.h	68;"	d
+eBADPARAMETER_OM	EduOM/Header/EduOM_errorcodes.h	62;"	d
+eBADSTART_OM	EduOM/Header/EduOM_errorcodes.h	66;"	d
+eBADUSERBUF_OM	EduOM/Header/EduOM_errorcodes.h	68;"	d
+eCANTALLOCEXTENT_BL_OM	EduOM/Header/EduOM_errorcodes.h	71;"	d
+eCREATEFILEFAILED_BFM	EduBfM/Header/EduBfM_errorcodes.h	79;"	d
+eDELETEOBJECTFAILED_BTM	EduBtM/Header/EduBtM_errorcodes.h	79;"	d
+eDUPLICATEDKEY_BTM	EduBtM/Header/EduBtM_errorcodes.h	74;"	d
+eDUPLICATEDOBJECTID_BTM	EduBtM/Header/EduBtM_errorcodes.h	72;"	d
+eEXCEEDMAXDEPTHOFBTREE_BTM	EduBtM/Header/EduBtM_errorcodes.h	76;"	d
+eFILELOCKAGAIN_BFM	EduBfM/Header/EduBfM_errorcodes.h	80;"	d
+eFILELOCKUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	81;"	d
+eFLUSHFIXEDBUF_BFM	EduBfM/Header/EduBfM_errorcodes.h	67;"	d
+eFULLPROCTABLE_BFM	EduBfM/Header/EduBfM_errorcodes.h	120;"	d
+eMUTEXCREATEBUSY_BFM	EduBfM/Header/EduBfM_errorcodes.h	82;"	d
+eMUTEXCREATEFAULT_BFM	EduBfM/Header/EduBfM_errorcodes.h	84;"	d
+eMUTEXCREATEINVAL_BFM	EduBfM/Header/EduBfM_errorcodes.h	83;"	d
+eMUTEXCREATEUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	85;"	d
+eMUTEXDESTROYINVAL_BFM	EduBfM/Header/EduBfM_errorcodes.h	86;"	d
+eMUTEXDESTROYUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	87;"	d
+eMUTEXINITFAILED_BFM	EduBfM/Header/EduBfM_errorcodes.h	93;"	d
+eMUTEXLOCKAGAIN_BFM	EduBfM/Header/EduBfM_errorcodes.h	88;"	d
+eMUTEXLOCKDEADLK_BFM	EduBfM/Header/EduBfM_errorcodes.h	89;"	d
+eMUTEXLOCKUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	90;"	d
+eMUTEXUNLOCKPERM_BFM	EduBfM/Header/EduBfM_errorcodes.h	91;"	d
+eMUTEXUNLOCKUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	92;"	d
+eNOERROR	EduBfM/Header/EduBfM_common.h	124;"	d
+eNOERROR	EduBtM/Header/EduBtM_common.h	429;"	d
+eNOERROR	EduOM/Header/EduOM_common.h	356;"	d
+eNOMORELOCKCONTROLBLOCKS_BFM	EduBfM/Header/EduBfM_errorcodes.h	121;"	d
+eNOSUCHLOCKEXIST_BFM	EduBfM/Header/EduBfM_errorcodes.h	72;"	d
+eNOSUCHTREELATCH_BTM	EduBtM/Header/EduBtM_errorcodes.h	78;"	d
+eNOTFOUND_BFM	EduBfM/Header/EduBfM_errorcodes.h	68;"	d
+eNOTFOUND_BTM	EduBtM/Header/EduBtM_errorcodes.h	71;"	d
+eNOTMOUNTEDCOHERENCYVOLUME_BFM	EduBfM/Header/EduBfM_errorcodes.h	74;"	d
+eNOTSUPPORTED_EDUBFM	EduBfM/Header/EduBfM_errorcodes.h	123;"	d
+eNOTSUPPORTED_EDUBTM	EduBtM/Header/EduBtM_errorcodes.h	82;"	d
+eNOTSUPPORTED_EDUOM	EduOM/Header/EduOM_errorcodes.h	73;"	d
+eNOUNFIXEDBUF_BFM	EduBfM/Header/EduBfM_errorcodes.h	69;"	d
+eNULLBUFACCESSCB_BFM	EduBfM/Header/EduBfM_errorcodes.h	71;"	d
+eSEMCLOSEINVAL_BFM	EduBfM/Header/EduBfM_errorcodes.h	106;"	d
+eSEMCLOSENOSYS_BFM	EduBfM/Header/EduBfM_errorcodes.h	107;"	d
+eSEMCLOSEUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	108;"	d
+eSEMCREATEACCES_BFM	EduBfM/Header/EduBfM_errorcodes.h	95;"	d
+eSEMCREATEEXIST_BFM	EduBfM/Header/EduBfM_errorcodes.h	96;"	d
+eSEMCREATEINTR_BFM	EduBfM/Header/EduBfM_errorcodes.h	97;"	d
+eSEMCREATEINVAL_BFM	EduBfM/Header/EduBfM_errorcodes.h	98;"	d
+eSEMCREATEMFILE_BFM	EduBfM/Header/EduBfM_errorcodes.h	99;"	d
+eSEMCREATENAMETOOLONG_BFM	EduBfM/Header/EduBfM_errorcodes.h	100;"	d
+eSEMCREATENFILE_BFM	EduBfM/Header/EduBfM_errorcodes.h	101;"	d
+eSEMCREATENOENT_BFM	EduBfM/Header/EduBfM_errorcodes.h	102;"	d
+eSEMCREATENOSPC_BFM	EduBfM/Header/EduBfM_errorcodes.h	103;"	d
+eSEMCREATENOSYS_BFM	EduBfM/Header/EduBfM_errorcodes.h	104;"	d
+eSEMCREATEUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	105;"	d
+eSEMDESTROYACCES_BFM	EduBfM/Header/EduBfM_errorcodes.h	109;"	d
+eSEMDESTROYENOENT_BFM	EduBfM/Header/EduBfM_errorcodes.h	111;"	d
+eSEMDESTROYNAMETOOLONG_BFM	EduBfM/Header/EduBfM_errorcodes.h	110;"	d
+eSEMDESTROYNOSYS_BFM	EduBfM/Header/EduBfM_errorcodes.h	112;"	d
+eSEMDESTROYUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	113;"	d
+eSEMPOSTINVAL_BFM	EduBfM/Header/EduBfM_errorcodes.h	114;"	d
+eSEMPOSTUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	115;"	d
+eSEMWAITINTR_BFM	EduBfM/Header/EduBfM_errorcodes.h	117;"	d
+eSEMWAITINVAL_BFM	EduBfM/Header/EduBfM_errorcodes.h	116;"	d
+eSEMWAITUNKNOWN_BFM	EduBfM/Header/EduBfM_errorcodes.h	118;"	d
+eSHMATFAILED_BFM	EduBfM/Header/EduBfM_errorcodes.h	77;"	d
+eSHMCTLFAILED_BFM	EduBfM/Header/EduBfM_errorcodes.h	76;"	d
+eSHMDTFAILED_BFM	EduBfM/Header/EduBfM_errorcodes.h	78;"	d
+eSHMGETFAILED_BFM	EduBfM/Header/EduBfM_errorcodes.h	75;"	d
+eSIGHANDLERINSTALLFAILED_BFM	EduBfM/Header/EduBfM_errorcodes.h	119;"	d
+eTOOLARGESORTKEY_OM	EduOM/Header/EduOM_errorcodes.h	70;"	d
+eTRAVERSEPATH_BTM	EduBtM/Header/EduBtM_errorcodes.h	77;"	d
+edubfm_AllocTrain	EduBfM/edubfm_AllocTrain.c	/^Four edubfm_AllocTrain($/;"	f
+edubfm_Delete	EduBfM/edubfm_Hash.c	/^Four edubfm_Delete($/;"	f
+edubfm_DeleteAll	EduBfM/edubfm_Hash.c	/^Four edubfm_DeleteAll(void)$/;"	f
+edubfm_FlushTrain	EduBfM/edubfm_FlushTrain.c	/^Four edubfm_FlushTrain($/;"	f
+edubfm_Insert	EduBfM/edubfm_Hash.c	/^Four edubfm_Insert($/;"	f
+edubfm_LookUp	EduBfM/edubfm_Hash.c	/^Four edubfm_LookUp($/;"	f
+edubfm_ReadTrain	EduBfM/edubfm_ReadTrain.c	/^Four edubfm_ReadTrain($/;"	f
+edubfm_dump_buffertable	EduBfM/EduBfM_Test.c	/^void edubfm_dump_buffertable($/;"	f
+edubfm_dump_hashtable	EduBfM/EduBfM_Test.c	/^void edubfm_dump_hashtable($/;"	f
+edubtm_BinarySearchInternal	EduBtM/edubtm_BinarySearch.c	/^Boolean edubtm_BinarySearchInternal($/;"	f
+edubtm_BinarySearchLeaf	EduBtM/edubtm_BinarySearch.c	/^Boolean edubtm_BinarySearchLeaf($/;"	f
+edubtm_CompactInternalPage	EduBtM/edubtm_Compact.c	/^void edubtm_CompactInternalPage($/;"	f
+edubtm_CompactLeafPage	EduBtM/edubtm_Compact.c	/^void edubtm_CompactLeafPage($/;"	f
+edubtm_Delete	EduBtM/edubtm_Delete.c	/^Four edubtm_Delete($/;"	f
+edubtm_DeleteLeaf	EduBtM/edubtm_Delete.c	/^Four edubtm_DeleteLeaf($/;"	f
+edubtm_Fetch	EduBtM/EduBtM_Fetch.c	/^Four edubtm_Fetch($/;"	f
+edubtm_FetchNext	EduBtM/EduBtM_FetchNext.c	/^Four edubtm_FetchNext($/;"	f
+edubtm_FirstObject	EduBtM/edubtm_FirstObject.c	/^Four edubtm_FirstObject($/;"	f
+edubtm_FreePages	EduBtM/edubtm_FreePages.c	/^Four edubtm_FreePages($/;"	f
+edubtm_InitInternal	EduBtM/edubtm_InitPage.c	/^Four edubtm_InitInternal($/;"	f
+edubtm_InitLeaf	EduBtM/edubtm_InitPage.c	/^Four edubtm_InitLeaf($/;"	f
+edubtm_Insert	EduBtM/edubtm_Insert.c	/^Four edubtm_Insert($/;"	f
+edubtm_InsertInternal	EduBtM/edubtm_Insert.c	/^Four edubtm_InsertInternal($/;"	f
+edubtm_InsertLeaf	EduBtM/edubtm_Insert.c	/^Four edubtm_InsertLeaf($/;"	f
+edubtm_KeyCompare	EduBtM/edubtm_Compare.c	/^Four edubtm_KeyCompare($/;"	f
+edubtm_LastObject	EduBtM/edubtm_LastObject.c	/^Four edubtm_LastObject($/;"	f
+edubtm_SplitInternal	EduBtM/edubtm_Split.c	/^Four edubtm_SplitInternal($/;"	f
+edubtm_SplitLeaf	EduBtM/edubtm_Split.c	/^Four edubtm_SplitLeaf($/;"	f
+edubtm_root_insert	EduBtM/edubtm_root.c	/^Four edubtm_root_insert($/;"	f
+eduom_CreateObject	EduOM/eduom_CreateObject.c	/^Four eduom_CreateObject($/;"	f
+eduom_DumpAllPage	EduOM/EduOM_Test.c	/^Four eduom_DumpAllPage($/;"	f
+eduom_DumpOnePage	EduOM/EduOM_Test.c	/^Four eduom_DumpOnePage($/;"	f
+eduom_DumpPage	EduOM/EduOM_Test.c	/^Four eduom_DumpPage($/;"	f
+eduom_GetNextPageID	EduOM/EduOM_Test.c	/^Four eduom_GetNextPageID($/;"	f
+eff	EduBtM/Header/EduBtM_common.h	/^	Two         eff;            \/* data file's extent fill factor *\/$/;"	m	struct:__anon30
+eff	EduBtM/Header/EduBtM_common.h	/^	Two    eff;                 \/* B+-tree file's extent fill factor *\/$/;"	m	struct:__anon31
+eff	EduOM/Header/EduOM_common.h	/^	Two         eff;            \/* data file's extent fill factor *\/$/;"	m	struct:__anon48
+elem	EduBtM/Header/EduBtM_common.h	/^	} elem;$/;"	m	struct:_DeallocListElem	typeref:union:_DeallocListElem::__anon34
+elem	EduOM/Header/EduOM_common.h	/^	} elem;$/;"	m	struct:_DeallocListElem	typeref:union:_DeallocListElem::__anon50
+elemSize	EduBtM/Header/Util_pool.h	/^    Four        elemSize;		\/* element size *\/\/* YRK22JUL2003-2 *\/$/;"	m	struct:_Pool
+elemSize	EduOM/Header/Util_pool.h	/^    Four        elemSize;		\/* element size *\/\/* YRK22JUL2003-2 *\/$/;"	m	struct:_Pool
+fid	EduBtM/Header/EduBtM_common.h	/^	FileID      fid;        \/* data file's file identifier *\/$/;"	m	struct:__anon30
+fid	EduBtM/Header/EduBtM_common.h	/^	FileID fid;         \/* B+-tree file's file identifier *\/$/;"	m	struct:__anon31
+fid	EduBtM/Header/OM_Internal.h	/^    FileID fid;			\/* fileID within its volume *\/$/;"	m	struct:__anon17
+fid	EduOM/Header/EduOM_Internal.h	/^	FileID fid;         \/* fileID within its volume *\/$/;"	m	struct:__anon41
+fid	EduOM/Header/EduOM_common.h	/^	FileID      fid;        \/* data file's file identifier *\/$/;"	m	struct:__anon48
+fidOrIid	EduBfM/Header/EduBfM_TestModule.h	/^    PageID fidOrIid;            \/* file id or index id containing this page *\/$/;"	m	struct:PageHdr_T_tag
+fidOrIid	EduBtM/Header/EduBtM_common.h	/^	PageID fidOrIid;            \/* file id or index id containing this page *\/$/;"	m	struct:PageHdr_T_tag
+fidOrIid	EduOM/Header/EduOM_common.h	/^	PageID fidOrIid;            \/* file id or index id containing this page *\/$/;"	m	struct:PageHdr_T_tag
+firstElem	EduBtM/Header/Util_pool.h	/^    char 		*firstElem;		\/* pointer to the first freed element *\/$/;"	m	struct:_SubpoolHdr
+firstElem	EduOM/Header/Util_pool.h	/^    char 		*firstElem;		\/* pointer to the first freed element *\/$/;"	m	struct:_SubpoolHdr
+firstPage	EduBtM/Header/EduBtM_common.h	/^	ShortPageID firstPage;  \/* B+-tree file's first page No *\/$/;"	m	struct:__anon31
+firstPage	EduBtM/Header/EduBtM_common.h	/^	ShortPageID firstPage;  \/* data file's first page No *\/ \/* COOKIE17NOV1999 *\/$/;"	m	struct:__anon30
+firstPage	EduOM/Header/EduOM_common.h	/^	ShortPageID firstPage;  \/* data file's first page No *\/$/;"	m	struct:__anon48
+fixed	EduBfM/Header/EduBfM_Internal.h	/^    Two    	fixed;		\/* fixed count *\/$/;"	m	struct:__anon56
+flag	EduBtM/Header/EduBtM_common.h	/^	One      flag;      \/* state of the cursor *\/$/;"	m	struct:__anon29
+flag	EduBtM/Header/EduBtM_common.h	/^	Two         flag;                   \/* flag for some more informations *\/$/;"	m	struct:__anon28
+flags	EduBfM/Header/EduBfM_TestModule.h	/^    Four flags;$/;"	m	struct:PageHdr_T_tag
+flags	EduBtM/Header/EduBtM_Internal.h	/^	Four flags;                 \/* flag to store page information *\/$/;"	m	struct:__anon1
+flags	EduBtM/Header/EduBtM_Internal.h	/^	Four flags;                 \/* flag to store page information *\/$/;"	m	struct:__anon3
+flags	EduBtM/Header/EduBtM_Internal.h	/^	Four flags;                 \/* flag to store page information *\/$/;"	m	struct:__anon5
+flags	EduBtM/Header/EduBtM_Internal.h	/^	Four flags;                 \/* flag to store page information *\/$/;"	m	struct:__anon7
+flags	EduBtM/Header/EduBtM_common.h	/^	Four flags;$/;"	m	struct:PageHdr_T_tag
+flags	EduBtM/Header/OM_Internal.h	/^    Four flags;                 \/* flag to store page information *\/$/;"	m	struct:__anon17
+flags	EduOM/Header/EduOM_Internal.h	/^	Four flags;         \/* flag to store page information *\/$/;"	m	struct:__anon41
+flags	EduOM/Header/EduOM_common.h	/^	Four flags;$/;"	m	struct:PageHdr_T_tag
+free	EduBtM/Header/EduBtM_Internal.h	/^	Two     free;            \/* starting point of the free space *\/$/;"	m	struct:__anon5
+free	EduBtM/Header/EduBtM_Internal.h	/^	Two     free;       \/* starting point of the free space *\/$/;"	m	struct:__anon3
+free	EduBtM/Header/OM_Internal.h	/^    Two free;			\/* offset of contiguous free area on page *\/$/;"	m	struct:__anon17
+free	EduOM/Header/EduOM_Internal.h	/^	Two free;           \/* offset of contiguous free area on page *\/$/;"	m	struct:__anon41
+hashTable	EduBfM/Header/EduBfM_Internal.h	/^    Two*       		 	hashTable;	\/* hash table *\/$/;"	m	struct:__anon57
+hdr	EduBtM/Header/EduBtM_Internal.h	/^	BtreeAnyHdr hdr;            \/* header of pages *\/$/;"	m	struct:__anon2
+hdr	EduBtM/Header/EduBtM_Internal.h	/^	BtreeInternalHdr    hdr;       \/* header of the slotted page *\/$/;"	m	struct:__anon4
+hdr	EduBtM/Header/EduBtM_Internal.h	/^	BtreeLeafHdr hdr;           \/* header of btree leaf page *\/$/;"	m	struct:__anon6
+hdr	EduBtM/Header/EduBtM_Internal.h	/^	BtreeOverflowHdr    hdr;       \/* header of the btree overflow page *\/$/;"	m	struct:__anon8
+header	EduBfM/Header/EduBfM_TestModule.h	/^    PageHdr header;$/;"	m	struct:Page_tag
+header	EduBtM/Header/EduBtM_common.h	/^	ObjectHdr   header;         \/* the object's header *\/$/;"	m	struct:__anon25
+header	EduBtM/Header/EduBtM_common.h	/^	PageHdr header;$/;"	m	struct:Page_tag
+header	EduBtM/Header/OM_Internal.h	/^    SlottedPageHdr header;	  \/* header of the slotted page *\/$/;"	m	struct:__anon18
+header	EduOM/Header/EduOM_Internal.h	/^	SlottedPageHdr header;    \/* header of the slotted page *\/$/;"	m	struct:__anon42
+header	EduOM/Header/EduOM_common.h	/^	ObjectHdr   header;         \/* the object's header *\/$/;"	m	struct:__anon47
+header	EduOM/Header/EduOM_common.h	/^	PageHdr header;$/;"	m	struct:Page_tag
+high	EduBfM/Header/EduBfM_TestModule.h	/^    UFour high;$/;"	m	struct:__anon52
+high	EduBtM/Header/EduBtM_TestModule.h	/^    UFour high;$/;"	m	struct:__anon35
+high	EduOM/Header/EduOM_TestModule.h	/^    UFour high;$/;"	m	struct:__anon38
+itoa	EduOM/EduOM_Test.c	/^char* itoa(Four val, Four base){$/;"	f
+key	EduBfM/Header/EduBfM_Internal.h	/^    BfMHashKey 	key;		\/* identify a page *\/$/;"	m	struct:__anon56
+key	EduBtM/Header/EduBtM_common.h	/^	KeyValue key;       \/* what key value? *\/$/;"	m	struct:__anon29
+klen	EduBtM/Header/EduBtM_Internal.h	/^	Two         klen;       \/* key length *\/$/;"	m	struct:__anon12
+klen	EduBtM/Header/EduBtM_Internal.h	/^	Two  klen;          \/* key length *\/$/;"	m	struct:__anon10
+klen	EduBtM/Header/EduBtM_Internal.h	/^	Two  klen;          \/* key length *\/$/;"	m	struct:__anon13
+klen	EduBtM/Header/EduBtM_Internal.h	/^	Two klen;           \/* key length *\/$/;"	m	struct:__anon11
+kpart	EduBtM/Header/EduBtM_common.h	/^	KeyPart     kpart[MAXNUMKEYPARTS];  \/* eight key parts *\/$/;"	m	struct:__anon28
+kval	EduBtM/Header/EduBtM_Internal.h	/^	char        kval[MAXKEYLEN]; \/* key value *\/$/;"	m	struct:__anon12
+kval	EduBtM/Header/EduBtM_Internal.h	/^	char kval[1];       \/* key value *\/$/;"	m	struct:__anon10
+kval	EduBtM/Header/EduBtM_Internal.h	/^	char kval[1];       \/* key value and (ObjectID array or overflow PageID) *\/$/;"	m	struct:__anon11
+kval	EduBtM/Header/EduBtM_Internal.h	/^	char kval[MAXKEYLEN];   \/* key value *\/$/;"	m	struct:__anon13
+lastPage	EduBtM/Header/EduBtM_common.h	/^	ShortPageID lastPage;   \/* data file's last page No *\/$/;"	m	struct:__anon30
+lastPage	EduOM/Header/EduOM_common.h	/^	ShortPageID lastPage;   \/* data file's last page No *\/$/;"	m	struct:__anon48
+leaf	EduBtM/Header/EduBtM_common.h	/^	PageID   leaf;      \/* which leaf page? *\/$/;"	m	struct:__anon29
+len	EduBtM/Header/EduBtM_common.h	/^	Two len;$/;"	m	struct:__anon26
+length	EduBtM/Header/EduBtM_common.h	/^	Four length;        \/* the object's data size *\/$/;"	m	struct:__anon24
+length	EduBtM/Header/EduBtM_common.h	/^	Two         length;         \/* how ?   *\/$/;"	m	struct:__anon27
+length	EduOM/Header/EduOM_common.h	/^	Four length;        \/* the object's data size *\/$/;"	m	struct:__anon46
+logRecLen	EduBfM/Header/EduBfM_TestModule.h	/^    Four logRecLen;             \/* log record length *\/$/;"	m	struct:PageHdr_T_tag
+logRecLen	EduBtM/Header/EduBtM_common.h	/^	Four logRecLen;             \/* log record length *\/$/;"	m	struct:PageHdr_T_tag
+logRecLen	EduOM/Header/EduOM_common.h	/^	Four logRecLen;             \/* log record length *\/$/;"	m	struct:PageHdr_T_tag
+logVolumeDeviceList	EduBfM/Header/EduBfM_common.h	/^	char*   logVolumeDeviceList;    \/* log volume device list *\/ \/* YKL13AUG1998-1 *\/$/;"	m	struct:CfgParams_T_tag
+low	EduBfM/Header/EduBfM_TestModule.h	/^    UFour low;$/;"	m	struct:__anon52
+low	EduBtM/Header/EduBtM_TestModule.h	/^    UFour low;$/;"	m	struct:__anon35
+low	EduOM/Header/EduOM_TestModule.h	/^    UFour low;$/;"	m	struct:__anon38
+lsn	EduBfM/Header/EduBfM_TestModule.h	/^    Lsn_T lsn;                  \/* page lsn *\/$/;"	m	struct:PageHdr_T_tag
+lsn	EduBtM/Header/EduBtM_common.h	/^	Lsn_T lsn;                  \/* page lsn *\/$/;"	m	struct:PageHdr_T_tag
+lsn	EduOM/Header/EduOM_common.h	/^	Lsn_T lsn;                  \/* page lsn *\/$/;"	m	struct:PageHdr_T_tag
+main	EduBfM/EduBfM_TestModule.c	/^Four main()$/;"	f
+main	EduBtM/EduBtM_TestModule.c	/^Four main()$/;"	f
+main	EduOM/EduOM_TestModule.c	/^Four main()$/;"	f
+maxElemInSubpool	EduBtM/Header/Util_pool.h	/^    Four        maxElemInSubpool;	\/* maximum elements in subpool *\/\/* YRK22JUL2003-2 *\/$/;"	m	struct:_Pool
+maxElemInSubpool	EduOM/Header/Util_pool.h	/^    Four        maxElemInSubpool;	\/* maximum elements in subpool *\/\/* YRK22JUL2003-2 *\/$/;"	m	struct:_Pool
+nBufs	EduBfM/Header/EduBfM_Internal.h	/^    Two                 nBufs;          \/* # of buffers in this buffer pool *\/$/;"	m	struct:__anon57
+nEntries	EduBtM/Header/EduBtM_common.h	/^	Four nEntries;      \/* # of entries in this array *\/$/;"	m	struct:__anon19
+nEntries	EduOM/Header/Util_varArray.h	/^    Four nEntries;		\/* # of entries in this array *\/$/;"	m	struct:__anon37
+nObjects	EduBtM/Header/EduBtM_Internal.h	/^	Two     nObjects;         \/* # of ObjectIDs in this page *\/$/;"	m	struct:__anon7
+nObjects	EduBtM/Header/EduBtM_Internal.h	/^	Two nObjects;       \/* # of ObjectIDs *\/$/;"	m	struct:__anon11
+nObjects	EduBtM/Header/EduBtM_Internal.h	/^	Two nObjects;       \/* # of ObjectIDs *\/$/;"	m	struct:__anon13
+nSlots	EduBtM/Header/EduBtM_Internal.h	/^	Two     nSlots;          \/* # of entries in this page *\/$/;"	m	struct:__anon5
+nSlots	EduBtM/Header/EduBtM_Internal.h	/^	Two     nSlots;     \/* # of entries in this page *\/$/;"	m	struct:__anon3
+nSlots	EduBtM/Header/OM_Internal.h	/^    Two nSlots;			\/* slots in use on the page *\/$/;"	m	struct:__anon17
+nSlots	EduOM/Header/EduOM_Internal.h	/^	Two nSlots;         \/* slots in use on the page *\/$/;"	m	struct:__anon41
+next	EduBtM/Header/EduBtM_common.h	/^	struct _DeallocListElem *next;$/;"	m	struct:_DeallocListElem	typeref:struct:_DeallocListElem::_DeallocListElem
+next	EduOM/Header/EduOM_common.h	/^	struct _DeallocListElem *next;$/;"	m	struct:_DeallocListElem	typeref:struct:_DeallocListElem::_DeallocListElem
+nextHashEntry	EduBfM/Header/EduBfM_Internal.h	/^    Two    	nextHashEntry;$/;"	m	struct:__anon56
+nextPage	EduBtM/Header/EduBtM_Internal.h	/^	ShortPageID nextPage;         \/* Next Page *\/$/;"	m	struct:__anon7
+nextPage	EduBtM/Header/EduBtM_Internal.h	/^	ShortPageID nextPage;        \/* Next page *\/$/;"	m	struct:__anon5
+nextPage	EduBtM/Header/OM_Internal.h	/^    ShortPageID nextPage;	\/* Next PageID of data file *\/$/;"	m	struct:__anon17
+nextPage	EduOM/Header/EduOM_Internal.h	/^	ShortPageID nextPage;   \/* Next PageID of data file *\/$/;"	m	struct:__anon41
+nextSubpool	EduBtM/Header/Util_pool.h	/^    struct _SubpoolHdr 	*nextSubpool; 		\/* pointer to next subpool *\/$/;"	m	struct:_SubpoolHdr	typeref:struct:_SubpoolHdr::_SubpoolHdr
+nextSubpool	EduOM/Header/Util_pool.h	/^    struct _SubpoolHdr 	*nextSubpool; 		\/* pointer to next subpool *\/$/;"	m	struct:_SubpoolHdr	typeref:struct:_SubpoolHdr::_SubpoolHdr
+nextVictim	EduBfM/Header/EduBfM_Internal.h	/^    UTwo                nextVictim;     \/* starting point for searching a next victim *\/$/;"	m	struct:__anon57
+nparts	EduBtM/Header/EduBtM_common.h	/^	Two         nparts;                 \/* the number of key parts *\/$/;"	m	struct:__anon28
+offset	EduBfM/Header/EduBfM_TestModule.h	/^    UFour offset;               \/* byte position in a log volume *\/$/;"	m	struct:Lsn_T_tag
+offset	EduBtM/Header/EduBtM_common.h	/^	Two         offset;         \/* where ? *\/$/;"	m	struct:__anon27
+offset	EduBtM/Header/EduBtM_common.h	/^	UFour offset;               \/* byte position in a log volume *\/$/;"	m	struct:Lsn_T_tag
+offset	EduBtM/Header/OM_Internal.h	/^    Two 	offset;		\/* points to actual storage area *\/$/;"	m	struct:__anon16
+offset	EduOM/Header/EduOM_Internal.h	/^	Two     offset;     \/* points to actual storage area *\/$/;"	m	struct:__anon40
+offset	EduOM/Header/EduOM_common.h	/^	UFour offset;               \/* byte position in a log volume *\/$/;"	m	struct:Lsn_T_tag
+oid	EduBtM/Header/EduBtM_Internal.h	/^	ObjectID            oid[BO_MAXOBJECTIDS]; \/* ObjectID area *\/$/;"	m	struct:__anon8
+oid	EduBtM/Header/EduBtM_Internal.h	/^	ObjectID oid;       \/* an ObjectID *\/$/;"	m	struct:__anon13
+oid	EduBtM/Header/EduBtM_common.h	/^	ObjectID oid;       \/* object pointed by the cursor *\/$/;"	m	struct:__anon29
+oidArrayElemNo	EduBtM/Header/EduBtM_common.h	/^	Two      oidArrayElemNo;    \/* which element of the object array? *\/$/;"	m	struct:__anon29
+overflow	EduBtM/Header/EduBtM_common.h	/^	PageID   overflow;      \/* which overflow page? *\/$/;"	m	struct:__anon29
+p0	EduBtM/Header/EduBtM_Internal.h	/^	ShortPageID p0;     \/* the first pointer *\/$/;"	m	struct:__anon3
+pFid	EduBtM/Header/EduBtM_common.h	/^		PhysicalFileID pFid;    \/* file which had the page before deallocation *\/$/;"	m	union:_DeallocListElem::__anon34
+pFid	EduOM/Header/EduOM_common.h	/^		PhysicalFileID pFid;    \/* file which had the page before deallocation *\/$/;"	m	union:_DeallocListElem::__anon50
+pageNo	EduBfM/Header/EduBfM_Internal.h	/^    PageNo pageNo;		\/* a PageNo *\/$/;"	m	struct:__anon55
+pageNo	EduBfM/Header/EduBfM_common.h	/^    PageNo pageNo;		\/* a PageNo *\/$/;"	m	struct:__anon54
+pageNo	EduBtM/Header/EduBtM_common.h	/^	PageNo pageNo;      \/* a PageNo *\/$/;"	m	struct:__anon20
+pageNo	EduBtM/Header/EduBtM_common.h	/^	PageNo pageNo;      \/* specify the page holding the object *\/$/;"	m	struct:__anon21
+pageNo	EduBtM/Header/EduBtM_common.h	/^	PageNo pageNo;      \/* specify the page holding the object *\/$/;"	m	struct:__anon23
+pageNo	EduOM/Header/EduOM_common.h	/^	PageNo pageNo;      \/* a PageNo *\/$/;"	m	struct:__anon43
+pageNo	EduOM/Header/EduOM_common.h	/^	PageNo pageNo;      \/* specify the page holding the object *\/$/;"	m	struct:__anon44
+pid	EduBfM/Header/EduBfM_TestModule.h	/^    PageID pid;                 \/* page id of this page *\/$/;"	m	struct:PageHdr_T_tag
+pid	EduBtM/Header/EduBtM_Internal.h	/^	PageID pid;                 \/* YKL24MAR97: page id of this page, should be located on the beginning *\/$/;"	m	struct:__anon7
+pid	EduBtM/Header/EduBtM_Internal.h	/^	PageID pid;                 \/* page id of this page, should be located on the beginning *\/$/;"	m	struct:__anon1
+pid	EduBtM/Header/EduBtM_Internal.h	/^	PageID pid;                 \/* page id of this page, should be located on the beginning *\/$/;"	m	struct:__anon3
+pid	EduBtM/Header/EduBtM_Internal.h	/^	PageID pid;                 \/* page id of this page, should be located on the beginning *\/$/;"	m	struct:__anon5
+pid	EduBtM/Header/EduBtM_common.h	/^		PageID pid;             \/* page to be deallocated *\/$/;"	m	union:_DeallocListElem::__anon34
+pid	EduBtM/Header/EduBtM_common.h	/^	PageID pid;                 \/* page id of this page *\/$/;"	m	struct:PageHdr_T_tag
+pid	EduBtM/Header/OM_Internal.h	/^    PageID pid;                 \/* page id of this page, should be located on the beginnig *\/$/;"	m	struct:__anon17
+pid	EduOM/Header/EduOM_Internal.h	/^	PageID pid;         \/* page id of this page, should be located on the beginnig *\/$/;"	m	struct:__anon41
+pid	EduOM/Header/EduOM_common.h	/^		PageID pid;             \/* page to be deallocated *\/$/;"	m	union:_DeallocListElem::__anon50
+pid	EduOM/Header/EduOM_common.h	/^	PageID pid;                 \/* page id of this page *\/$/;"	m	struct:PageHdr_T_tag
+prevPage	EduBtM/Header/EduBtM_Internal.h	/^	ShortPageID prevPage;         \/* Previous Page *\/$/;"	m	struct:__anon7
+prevPage	EduBtM/Header/EduBtM_Internal.h	/^	ShortPageID prevPage;        \/* Previous page *\/$/;"	m	struct:__anon5
+prevPage	EduBtM/Header/OM_Internal.h	/^    ShortPageID prevPage;	\/* Prev PageID of data file *\/$/;"	m	struct:__anon17
+prevPage	EduOM/Header/EduOM_Internal.h	/^	ShortPageID prevPage;   \/* Prev PageID of data file *\/$/;"	m	struct:__anon41
+properties	EduBtM/Header/EduBtM_common.h	/^	Two  properties;        \/* the properties bit vector *\/$/;"	m	struct:__anon24
+properties	EduOM/Header/EduOM_common.h	/^	Two  properties;    \/* the properties bit vector *\/$/;"	m	struct:__anon46
+ptr	EduBtM/Header/EduBtM_common.h	/^	void *ptr;          \/* pointer to the chunk of memory *\/$/;"	m	struct:__anon19
+ptr	EduOM/Header/Util_varArray.h	/^    void *ptr;			\/* pointer to the chunk of memory *\/$/;"	m	struct:__anon37
+reserved	EduBfM/Header/EduBfM_TestModule.h	/^    Four reserved;$/;"	m	struct:PageHdr_T_tag
+reserved	EduBtM/Header/EduBtM_Internal.h	/^	Four reserved;              \/* reserved space to store page information *\/$/;"	m	struct:__anon1
+reserved	EduBtM/Header/EduBtM_Internal.h	/^	Four reserved;              \/* reserved space to store page information *\/$/;"	m	struct:__anon3
+reserved	EduBtM/Header/EduBtM_Internal.h	/^	Four reserved;              \/* reserved space to store page information *\/$/;"	m	struct:__anon5
+reserved	EduBtM/Header/EduBtM_Internal.h	/^	Four reserved;              \/* reserved space to store page information *\/$/;"	m	struct:__anon7
+reserved	EduBtM/Header/EduBtM_common.h	/^	Four reserved;$/;"	m	struct:PageHdr_T_tag
+reserved	EduBtM/Header/OM_Internal.h	/^    Four reserved;              \/* reserved space to store page information *\/$/;"	m	struct:__anon17
+reserved	EduOM/Header/EduOM_Internal.h	/^	Four reserved;      \/* reserved space to store page information *\/$/;"	m	struct:__anon41
+reserved	EduOM/Header/EduOM_common.h	/^	Four reserved;$/;"	m	struct:PageHdr_T_tag
+serial	EduBtM/Header/EduBtM_common.h	/^	Serial serial;      \/* a logical serial number *\/$/;"	m	struct:__anon22
+serial	EduOM/Header/EduOM_common.h	/^	Serial serial;      \/* a logical serial number *\/$/;"	m	struct:__anon45
+slot	EduBtM/Header/EduBtM_Internal.h	/^	Two             slot[1];    \/* the first slot *\/$/;"	m	struct:__anon4
+slot	EduBtM/Header/EduBtM_Internal.h	/^	Two      slot[1];        \/* the first slot *\/$/;"	m	struct:__anon6
+slot	EduBtM/Header/OM_Internal.h	/^    SlottedPageSlot slot[1];	  \/* slot arrays, indexes backwards *\/$/;"	m	struct:__anon18
+slot	EduOM/Header/EduOM_Internal.h	/^	SlottedPageSlot slot[1];      \/* slot arrays, indexes backwards *\/$/;"	m	struct:__anon42
+slotNo	EduBtM/Header/EduBtM_common.h	/^	SlotNo slotNo;      \/* specify the slot within the page *\/$/;"	m	struct:__anon21
+slotNo	EduBtM/Header/EduBtM_common.h	/^	SlotNo slotNo;      \/* specify the slot within the page *\/$/;"	m	struct:__anon23
+slotNo	EduBtM/Header/EduBtM_common.h	/^	Two      slotNo;        \/* which slot? *\/$/;"	m	struct:__anon29
+slotNo	EduOM/Header/EduOM_common.h	/^	SlotNo slotNo;      \/* specify the slot within the page *\/$/;"	m	struct:__anon44
+sm_CatOverlayForBtree	EduBtM/Header/EduBtM_common.h	/^} sm_CatOverlayForBtree;$/;"	t	typeref:struct:__anon31
+sm_CatOverlayForData	EduBtM/Header/EduBtM_common.h	/^} sm_CatOverlayForData;$/;"	t	typeref:struct:__anon30
+sm_CatOverlayForData	EduOM/Header/EduOM_common.h	/^} sm_CatOverlayForData;$/;"	t	typeref:struct:__anon48
+sm_CatOverlayForSysTables	EduBtM/Header/EduBtM_common.h	/^} sm_CatOverlayForSysTables;$/;"	t	typeref:struct:__anon32
+spaceListNext	EduBtM/Header/OM_Internal.h	/^    ShortPageID	spaceListNext;	\/*   within the same file *\/$/;"	m	struct:__anon17
+spaceListNext	EduOM/Header/EduOM_Internal.h	/^	ShortPageID spaceListNext;  \/*   within the same file *\/$/;"	m	struct:__anon41
+spaceListPrev	EduBtM/Header/OM_Internal.h	/^    ShortPageID	spaceListPrev;	\/* double linked list of xx% free pages *\/$/;"	m	struct:__anon17
+spaceListPrev	EduOM/Header/EduOM_Internal.h	/^	ShortPageID spaceListPrev;  \/* double linked list of xx% free pages *\/$/;"	m	struct:__anon41
+spid	EduBtM/Header/EduBtM_Internal.h	/^	ShortPageID spid;       \/* pointer to the child page *\/$/;"	m	struct:__anon10
+spid	EduBtM/Header/EduBtM_Internal.h	/^	ShortPageID spid;       \/* points to the child page *\/$/;"	m	struct:__anon12
+subpoolPtr	EduBtM/Header/Util_pool.h	/^    SubpoolHdr *subpoolPtr;		\/* pointer to the first subpool *\/$/;"	m	struct:_Pool
+subpoolPtr	EduOM/Header/Util_pool.h	/^    SubpoolHdr *subpoolPtr;		\/* pointer to the first subpool *\/$/;"	m	struct:_Pool
+tag	EduBtM/Header/EduBtM_common.h	/^	Two  tag;           \/* the object's tag *\/$/;"	m	struct:__anon24
+tag	EduOM/Header/EduOM_common.h	/^	Two  tag;           \/* the object's tag *\/$/;"	m	struct:__anon46
+type	EduBtM/Header/EduBtM_Internal.h	/^	One     type;             \/* Internal, Leaf, or Overflow *\/$/;"	m	struct:__anon7
+type	EduBtM/Header/EduBtM_Internal.h	/^	One     type;            \/* Internal, Leaf, or Overflow *\/$/;"	m	struct:__anon5
+type	EduBtM/Header/EduBtM_Internal.h	/^	One     type;       \/* Internal, Leaf, or Overflow *\/$/;"	m	struct:__anon3
+type	EduBtM/Header/EduBtM_Internal.h	/^	One    type;        \/* Internal, Leaf, or Overflow *\/$/;"	m	struct:__anon1
+type	EduBtM/Header/EduBtM_common.h	/^	DLType type;$/;"	m	struct:_DeallocListElem
+type	EduBtM/Header/EduBtM_common.h	/^	Two         type;           \/* VARIABLE or FIXED *\/$/;"	m	struct:__anon27
+type	EduOM/Header/EduOM_common.h	/^	DLType type;$/;"	m	struct:_DeallocListElem
+unique	EduBtM/Header/EduBtM_common.h	/^	Unique unique;      \/* Unique No for checking dangling object *\/$/;"	m	struct:__anon21
+unique	EduBtM/Header/EduBtM_common.h	/^	Unique unique;      \/* Unique No for checking dangling object *\/$/;"	m	struct:__anon23
+unique	EduBtM/Header/OM_Internal.h	/^    Unique	unique;		\/* unique number *\/$/;"	m	struct:__anon16
+unique	EduBtM/Header/OM_Internal.h	/^    Unique unique;		\/* unique number to allocate *\/$/;"	m	struct:__anon17
+unique	EduOM/Header/EduOM_Internal.h	/^	Unique  unique;     \/* unique number *\/$/;"	m	struct:__anon40
+unique	EduOM/Header/EduOM_Internal.h	/^	Unique unique;      \/* unique number to allocate *\/$/;"	m	struct:__anon41
+unique	EduOM/Header/EduOM_common.h	/^	Unique unique;      \/* Unique No for checking dangling object *\/$/;"	m	struct:__anon44
+uniqueLimit	EduBtM/Header/OM_Internal.h	/^    Unique uniqueLimit;		\/* limit of valid unique numbers *\/$/;"	m	struct:__anon17
+uniqueLimit	EduOM/Header/EduOM_Internal.h	/^	Unique uniqueLimit;     \/* limit of valid unique numbers *\/$/;"	m	struct:__anon41
+unused	EduBtM/Header/EduBtM_Internal.h	/^	Two         unused;     \/* number of unused bytes which are not *\/$/;"	m	struct:__anon3
+unused	EduBtM/Header/EduBtM_Internal.h	/^	Two     unused;          \/* number of unused bytes which are not part of the contiguous freespace *\/$/;"	m	struct:__anon5
+unused	EduBtM/Header/OM_Internal.h	/^    Two unused;			\/* number of unused bytes which are not part of the contiguous freespace *\/$/;"	m	struct:__anon17
+unused	EduOM/Header/EduOM_Internal.h	/^	Two unused;         \/* number of unused bytes which are not part of the contiguous freespace *\/$/;"	m	struct:__anon41
+useBulkFlush	EduBfM/Header/EduBfM_common.h	/^    Boolean useBulkFlush;       \/* use bulkflush *\/$/;"	m	struct:CfgParams_T_tag
+useDeadlockAvoidance	EduBfM/Header/EduBfM_common.h	/^    Boolean useDeadlockAvoidance;   \/* use deadlock avoidance *\/$/;"	m	struct:CfgParams_T_tag
+val	EduBtM/Header/EduBtM_common.h	/^	char val[MAXKEYLEN];$/;"	m	struct:__anon26
+volNo	EduBfM/Header/EduBfM_Internal.h	/^    VolNo volNo;		\/* a volumeNo *\/$/;"	m	struct:__anon55
+volNo	EduBfM/Header/EduBfM_common.h	/^    VolNo volNo;		\/* a VolNo *\/$/;"	m	struct:__anon54
+volNo	EduBtM/Header/EduBtM_common.h	/^	VolID  volNo;       \/* specify the volume in which object is in *\/$/;"	m	struct:__anon21
+volNo	EduBtM/Header/EduBtM_common.h	/^	VolID  volNo;       \/* specify the volume in which object is in *\/$/;"	m	struct:__anon23
+volNo	EduBtM/Header/EduBtM_common.h	/^	VolNo volNo;        \/* a VolNo *\/$/;"	m	struct:__anon20
+volNo	EduBtM/Header/EduBtM_common.h	/^	VolNo volNo;        \/* a VolNo *\/$/;"	m	struct:__anon22
+volNo	EduOM/Header/EduOM_common.h	/^	VolID  volNo;       \/* specify the volume in which object is in *\/$/;"	m	struct:__anon44
+volNo	EduOM/Header/EduOM_common.h	/^	VolNo volNo;        \/* a VolNo *\/$/;"	m	struct:__anon43
+volNo	EduOM/Header/EduOM_common.h	/^	VolNo volNo;        \/* a VolNo *\/$/;"	m	struct:__anon45
+wrapCount	EduBfM/Header/EduBfM_TestModule.h	/^    UFour wrapCount;            \/* # of wrapping around a log volume *\/$/;"	m	struct:Lsn_T_tag
+wrapCount	EduBtM/Header/EduBtM_common.h	/^	UFour wrapCount;            \/* # of wrapping around a log volume *\/$/;"	m	struct:Lsn_T_tag
+wrapCount	EduOM/Header/EduOM_common.h	/^	UFour wrapCount;            \/* # of wrapping around a log volume *\/$/;"	m	struct:Lsn_T_tag

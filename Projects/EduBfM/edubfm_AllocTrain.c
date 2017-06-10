@@ -99,11 +99,31 @@ Four edubfm_AllocTrain(
     Four 	e;			/* for error */
     Four 	victim;			/* return value */
     Four 	i;
+    PageID *pid;
     
 
 	/* Error check whether using not supported functionality by EduBfM */
 	if(sm_cfgParams.useBulkFlush) ERR(eNOTSUPPORTED_EDUBFM);
 
+    victim = -1;
+    i = BI_NEXTVICTIM(type);
+    while ( victim == -1 ) {
+        if ( BI_FIXED(type, i) );
+        else if ( BI_BITS(type, i) & REFER )
+            BI_BITS(type, i) &= ~REFER;
+        else
+            victim = i;
+        i = (i + 1) % BI_NBUFS(type);
+    }
+    BI_NEXTVICTIM(type) = i;
+
+    pid = &BI_KEY(type, victim);
+    if ( !IS_NILBFMHASHKEY( *((BfMHashKey*)pid) ) ) {
+        e = edubfm_FlushTrain(pid, type);
+        if ( e < 0 ) ERR( e );
+        e = edubfm_Delete(pid, type);
+        if ( e < 0 ) ERR( e );
+    }
 
     
     return( victim );
