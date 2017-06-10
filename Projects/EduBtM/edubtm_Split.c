@@ -116,79 +116,10 @@ Four edubtm_SplitInternal(
     Two                         entryLen;               /* length of an entry */
     btm_InternalEntry           *fEntry;                /* internal entry in the given page, fpage */
     btm_InternalEntry           *nEntry;                /* internal entry in the new page, npage*/
-    Boolean                     isTmp=FALSE;
+    Boolean                     isTmp;
+
 
     
-    e = btm_AllocPage(catObjForFile, &fpage->hdr.pid, &newPid);
-    if (e < 0) ERR(e);
-    e = edubtm_InitInternal(&newPid, FALSE, isTmp);
-    if (e < 0) ERR(e);
-    e = BfM_GetTrain(&newPid, (char**)&npage, PAGE_BUF);
-    if (e < 0) ERR(e);
-
-    maxLoop = fpage->hdr.nSlots;
-    sum = 0;
-    for (i=0; i < maxLoop && sum < BI_HALF; i++) {
-        fEntry = (btm_InternalEntry*)&fpage->data[fpage->slot[-i]];
-        entryLen = sizeof(ShortPageID) + (sizeof(Two) + fEntry->klen + 3)/4*4;
-        sum += entryLen;
-        if (high == i)
-            sum += sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3)/4*4;
-    }
-    fpage->hdr.nSlots = i;
-
-    fEntry = (btm_InternalEntry*)&fpage->data[fpage->slot[-i]];
-    entryLen = sizeof(ShortPageID) + (sizeof(Two) + fEntry->klen + 3)/4*4;
-    ritem->spid = newPid.pageNo;
-    ritem->klen = fEntry->klen;
-    memcpy(ritem->kval, fEntry->kval, fEntry->klen);
-    
-    npage->hdr.p0 = ritem->spid;
-    i++;
-    nEntryOffset = 0;
-    flag = FALSE;
-    for (j=0; i < maxLoop; i++, j++) {
-        npage->slot[-j] = nEntryOffset;
-        fEntry = (btm_InternalEntry*)&fpage->data[fpage->slot[-i]];
-        entryLen = sizeof(ShortPageID) + (sizeof(Two) + fEntry->klen + 3)/4*4;
-        memcpy(&npage->data[nEntryOffset], fEntry, entryLen);
-        nEntryOffset += entryLen;
-        npage->hdr.nSlots++;
-        npage->hdr.free += entryLen;
-        fpage->hdr.unused += entryLen;
-        if (i == high) {
-            entryLen = sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3)/4*4;
-            memcpy(&npage->data[nEntryOffset], item, entryLen);
-            nEntryOffset += entryLen;
-            npage->hdr.free += entryLen;
-            flag = TRUE;
-        }
-    }
-    edubtm_CompactInternalPage(fpage, flag ? NIL : high);
-
-    if (!flag){
-        for(i=0; i < fpage->hdr.nSlots; i++) {
-            if (high == i) {
-                entryLen = sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3)/4*4;
-                fEntryOffset = fpage->hdr.free;
-                memcpy(&fpage->data[fEntryOffset], item, entryLen);
-                fpage->hdr.free += entryLen;
-                break;
-            }
-        }
-        fpage->hdr.nSlots++;
-        for(k=fpage->hdr.nSlots; k > i; k--)
-            fpage->slot[-k] = fpage->slot[-(k-1)];
-        fpage->slot[-i] = fEntryOffset;
-    }
-
-    e = BfM_SetDirty(&newPid, PAGE_BUF);
-    if (e < 0) ERRB1(e, npage, PAGE_BUF);
-    e = BfM_SetDirty(fpage, PAGE_BUF);
-    if (e < 0) ERRB1(e, fpage, PAGE_BUF);
-    e = BfM_FreeTrain(&newPid, PAGE_BUF);
-    if (e < 0) ERR(e);
-
     return(eNOERROR);
     
 } /* edubtm_SplitInternal() */
@@ -231,7 +162,7 @@ Four edubtm_SplitLeaf(
     Four                        e;              /* error number */
     Two                         i;              /* slot No. in the given page, fpage */
     Two                         j;              /* slot No. in the splitted pages */
-    SlotNo                      k;              /* slot No. in the new page */
+    Two                         k;              /* slot No. in the new page */
     Two                         maxLoop;        /* # of max loops; # of slots in fpage + 1 */
     Four                        sum;            /* the size of a filled area */
     PageID                      newPid;         /* for a New Allocated Page */
@@ -251,91 +182,9 @@ Four edubtm_SplitLeaf(
     Two                         itemEntryLen;   /* length of entry for item */
     Two                         entryLen;       /* entry length */
     Boolean                     flag;
-    Boolean                     isTmp = FALSE;
+    Boolean                     isTmp;
  
-    e = btm_AllocPage(catObjForFile, &fpage->hdr.pid, &newPid);
-    if (e < 0) ERR(e);
-    e = edubtm_InitLeaf(&newPid, FALSE, isTmp);
-    if (e < 0) ERR(e);
-    e = BfM_GetTrain(&newPid, (char**)&npage, PAGE_BUF);
-    if (e < 0) ERR(e);
-
-    maxLoop = fpage->hdr.nSlots;
-    sum = 0;
-    for (i=0; i < maxLoop && sum < BL_HALF; i++) {
-        fEntry = (btm_LeafEntry*)&fpage->data[fpage->slot[-i]];
-        alignedKlen = (fEntry->klen + 3)/4*4;
-        sum += 2*sizeof(Two) + alignedKlen + (fEntry->nObjects * OBJECTID_SIZE);
-        if (high == i) {
-            alignedKlen = (item->klen + 3)/4*4;
-            entryLen = 2*sizeof(Two) + alignedKlen + OBJECTID_SIZE;
-            sum += entryLen;
-        }
-    }
-    fpage->hdr.nSlots = i;
-
-    fEntry = (btm_LeafEntry*)&fpage->data[fpage->slot[-i]];
-    alignedKlen = (fEntry->klen + 3)/4*4;
-    entryLen = 2*sizeof(Two) + alignedKlen + (fEntry->nObjects * OBJECTID_SIZE);
-    ritem->spid = newPid.pageNo;
-    ritem->klen = fEntry->klen;
-    memcpy(ritem->kval, fEntry->kval, fEntry->klen);
     
-    nEntryOffset = 0;
-    flag = FALSE;
-    for (j=0; i < maxLoop; i++, j++) {
-        npage->slot[-j] = nEntryOffset;
-        fEntry = (btm_LeafEntry*)&fpage->data[fpage->slot[-i]];
-        alignedKlen = (fEntry->klen + 3)/4*4;
-        entryLen = 2*sizeof(Two) + alignedKlen + (fEntry->nObjects * OBJECTID_SIZE);
-        memcpy(&npage->data[nEntryOffset], fEntry, entryLen);
-        nEntryOffset += entryLen;
-        npage->hdr.nSlots++;
-        npage->hdr.free += entryLen;
-        fpage->hdr.unused += entryLen;
-        if (i == high) {
-            alignedKlen = (item->klen + 3)/4*4;
-            entryLen = 2*sizeof(Two) + alignedKlen + OBJECTID_SIZE;
-            memcpy(&npage->data[nEntryOffset], &item->nObjects, entryLen - OBJECTID_SIZE);
-            nEntryOffset += entryLen - OBJECTID_SIZE;
-            memcpy(&npage->data[nEntryOffset], &item->oid, OBJECTID_SIZE);
-            nEntryOffset += OBJECTID_SIZE;
-            npage->hdr.free += entryLen;
-            flag = TRUE;
-        }
-    }
-    edubtm_CompactLeafPage(fpage, flag ? NIL : high);
-
-    if (!flag){
-        for(i=0; i < fpage->hdr.nSlots; i++) {
-            if (high == i) {
-                alignedKlen = (item->klen + OBJECTID_SIZE + 3)/4*4;
-                entryLen = 2*sizeof(Two) + alignedKlen;
-                fEntryOffset = fpage->hdr.free;
-                memcpy(&fpage->data[fEntryOffset], &item->nObjects, entryLen - OBJECTID_SIZE);
-                fEntryOffset += entryLen - OBJECTID_SIZE;
-                memcpy(&fpage->data[fEntryOffset], &item->oid, OBJECTID_SIZE);
-                fEntryOffset = fpage->hdr.free;
-                fpage->hdr.free += entryLen;
-                break;
-            }
-        }
-        for(k=++fpage->hdr.nSlots; k > i; k--)
-            fpage->slot[-k] = fpage->slot[-(k-1)];
-        fpage->slot[-i] = fEntryOffset;
-    }
-
-    npage->hdr.nextPage = fpage->hdr.nextPage;
-    npage->hdr.prevPage = fpage->hdr.pid.pageNo;
-    fpage->hdr.nextPage = newPid.pageNo;
-
-    e = BfM_SetDirty(&newPid, PAGE_BUF);
-    if (e < 0) ERRB1(e, npage, PAGE_BUF);
-    e = BfM_SetDirty(fpage, PAGE_BUF);
-    if (e < 0) ERRB1(e, fpage, PAGE_BUF);
-    e = BfM_FreeTrain(&newPid, PAGE_BUF);
-    if (e < 0) ERR(e);
-    printf("ritem->spid=%d\n", newPid.pageNo);
 
     return(eNOERROR);
     

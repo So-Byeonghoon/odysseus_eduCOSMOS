@@ -100,10 +100,14 @@ Four edubtm_KeyCompare(
     Two                         j;              /* temporary variable */
     Two                         kpartSize;      /* size of the current kpart */
     Two                         len1, len2;	/* string length */
-    // Two_Invariable              s1, s2;         /* 2-byte short values */
-    Four_Invariable             *i1, *i2;         /* 4-byte int values */
-    // Four_Invariable             l1, l2;         /* 4-byte long values */
-    // Eight_Invariable            ll1, ll2;       /* 8-byte long long values */
+    Two_Invariable              s1, s2;         /* 2-byte short values */
+    Four_Invariable             i1, i2;         /* 4-byte int values */
+    Four_Invariable             l1, l2;         /* 4-byte long values */
+    Eight_Invariable            ll1, ll2;       /* 8-byte long long values */
+    float                       f1, f2;         /* float values */
+    double                      d1, d2;		/* double values */
+    PageID                      pid1, pid2;	/* PageID values */
+    OID                         oid1, oid2;     /* OID values */
     
 
     /* Error check whether using not supported functionality by EduBtM */
@@ -113,34 +117,6 @@ Four edubtm_KeyCompare(
             ERR(eNOTSUPPORTED_EDUBTM);
     }
 
-    kpartSize = 0;
-    for(i=0; i < kdesc->nparts; i++) {
-        if(kdesc->kpart[i].type == SM_VARSTRING) {
-            len1 = key1->val[kpartSize];
-            len2 = key2->val[kpartSize];
-            // printf("LEN: key1=%d, key2=%d\n", len1, len2);
-            kpartSize += 2;
-            for (j=0;j < len1 && j < len2; j++, kpartSize++) {
-                left  = &(key1->val[kpartSize]);
-                right = &(key2->val[kpartSize]);
-                // printf("%d\n", kpartSize);
-                // printf("CHAR: key1=%c, key2=%c\n", left[0], right[0]);
-                // printf("INT : key1=%x, key2=%x\n", left[0], right[0]);
-                if (*left > *right) return(GREAT);
-                if (*left < *right) return(LESS);
-            }
-            if (len1 > len2) return(GREAT);
-            if (len1 < len2) return(LESS);
-        }
-        else if (kdesc->kpart[i].length == SM_INT_SIZE) {
-            i1 = (Four*)&(key1->val[kpartSize]);
-            i2 = (Four*)&(key2->val[kpartSize]);
-            kpartSize += SM_INT_SIZE;
-            if (*i1 > *i2) return(GREAT);
-            if (*i1 < *i2) return(LESS);
-        }
-        else ERR(eNOTSUPPORTED_EDUBTM);
-    }
         
     return(EQUAL);
     

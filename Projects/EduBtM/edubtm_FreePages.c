@@ -92,56 +92,20 @@ Four edubtm_FreePages(
     Pool                *dlPool,        /* INOUT pool of dealloc list elements */
     DeallocListElem     *dlHead)        /* INOUT head of the dealloc list */
 {
-	/* These local variables are used in the solution code. However, you donÂ¡Â¯t have to use all these variables in your code, and you may also declare and use additional local variables if needed. */
+	/* These local variables are used in the solution code. However, you don¡¯t have to use all these variables in your code, and you may also declare and use additional local variables if needed. */
     Four                e;              /* error number */
     Two                 i;              /* index */
-    // Two                 alignedKlen;    /* aligned length of the key length */
+    Two                 alignedKlen;    /* aligned length of the key length */
     PageID              tPid;           /* a temporary PageID */
-    // PageID              ovPid;          /* a temporary PageID of an overflow page */
+    PageID              ovPid;          /* a temporary PageID of an overflow page */
     BtreePage           *apage;         /* a page pointer */
-    // BtreeOverflow       *opage;         /* page pointer to a buffer holding an overflow page */
-    // Two                 iEntryOffset;   /* starting offset of an internal entry */
-    // Two                 lEntryOffset;   /* starting offset of a leaf entry */
+    BtreeOverflow       *opage;         /* page pointer to a buffer holding an overflow page */
+    Two                 iEntryOffset;   /* starting offset of an internal entry */
+    Two                 lEntryOffset;   /* starting offset of a leaf entry */
     btm_InternalEntry   *iEntry;        /* an internal entry */
-    // btm_LeafEntry       *lEntry;        /* a leaf entry */
+    btm_LeafEntry       *lEntry;        /* a leaf entry */
     DeallocListElem     *dlElem;        /* an element of dealloc list */
 
-    if (pFid == NULL || curPid == NULL) ERR(eBADBTREEPAGE_BTM);
-
-    // why NewTrain? I allocate in EduBtM_CreateIndex!!
-    // e = BfM_GetNewTrain(curPid, (char**)&apage, PAGE_BUF);
-    e = BfM_GetTrain(curPid, (char**)&apage, PAGE_BUF);
-    if (e < 0) ERR(e);
-    
-    if (apage->any.hdr.type & INTERNAL) {
-        tPid.volNo = curPid->volNo;
-        tPid.pageNo = apage->bi.hdr.p0;
-        e = edubtm_FreePages(pFid, &tPid, dlPool, dlHead);
-        if (e < 0) ERRB1(e, curPid, PAGE_BUF);
-
-        for (i=0; i < apage->bi.hdr.nSlots; i++) {
-            iEntry = (btm_InternalEntry*)&(apage->bi.data[apage->bi.slot[-i]]);
-            tPid.pageNo = iEntry->spid;
-            e = edubtm_FreePages(pFid, &tPid, dlPool, dlHead);
-            if (e < 0) ERRB1(e, curPid, PAGE_BUF);
-        }
-    }
-    else if (!(apage->any.hdr.type & LEAF))
-        ERRB1(eBADPAGETYPE_BTM, curPid, PAGE_BUF);
-
-    e = Util_getElementFromPool(dlPool, &dlElem);
-    if (e < 0) ERRB1(e, curPid, PAGE_BUF);
-    dlElem->type = DL_PAGE;
-    dlElem->elem.pid = *curPid;
-    dlElem->next = dlHead->next;
-    dlHead->next = dlElem;
-
-    apage->any.hdr.type |= FREEPAGE;
-
-    e = BfM_SetDirty(curPid, PAGE_BUF);
-    if (e < 0) ERRB1(e, curPid, PAGE_BUF);
-    e = BfM_FreeTrain(curPid, PAGE_BUF);
-    if (e < 0) ERR(e);
 
     
     return(eNOERROR);

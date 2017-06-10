@@ -101,7 +101,6 @@ Four EduBtM_InsertObject(
     SlottedPage *catPage;	/* buffer page containing the catalog object */
     sm_CatOverlayForBtree *catEntry; /* pointer to Btree file catalog information */
     PhysicalFileID pFid;	 /* B+-tree file's FileID */
-    BtreePage                   *apage;                 /* a pointer to the root page */
 
     
     /*@ check parameters */
@@ -122,13 +121,7 @@ Four EduBtM_InsertObject(
         if(kdesc->kpart[i].type!=SM_INT && kdesc->kpart[i].type!=SM_VARSTRING)
             ERR(eNOTSUPPORTED_EDUBTM);
     }
-
-    e = edubtm_Insert(catObjForFile, root, kdesc, kval, oid, &lf, &lh, &item, dlPool, dlHead);
-    if (e < 0) ERR(e);
-    if (lh) {
-        e = edubtm_root_insert(catObjForFile, root, &item);
-        if (e < 0) ERR(e);
-    }
+    
     
     return(eNOERROR);
     

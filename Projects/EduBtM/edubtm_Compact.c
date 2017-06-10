@@ -97,26 +97,6 @@ void edubtm_CompactInternalPage(
     Two                 i;                      /* index variable */
     btm_InternalEntry   *entry;                 /* an entry in leaf page */
 
-    tpage = *apage;
-    memcpy(&apage->hdr, &tpage.hdr, sizeof(BtreeInternalHdr));
-    apageDataOffset = 0;
-    for (i=0; i < tpage.hdr.nSlots; i++) {
-        if (i == slotNo)
-            continue;
-        entry = (btm_InternalEntry*)&tpage.data[tpage.slot[-i]];
-        len = sizeof(ShortPageID) + (sizeof(Two) + entry->klen + 3)/4*4;
-        memcpy(&apage->data[apageDataOffset], entry, len);
-        apageDataOffset += len;
-    }
-    if (slotNo != NIL) {
-        entry = (btm_InternalEntry*)&tpage.data[tpage.slot[-slotNo]];
-        len = sizeof(ShortPageID) + (sizeof(Two) + entry->klen + 3)/4*4;
-        memcpy(&apage->data[apageDataOffset], entry, len);
-
-    }
-
-    apage->hdr.free -= apage->hdr.unused;
-    apage->hdr.unused = 0;
     
 
 } /* edubtm_CompactInternalPage() */
@@ -156,26 +136,6 @@ void edubtm_CompactLeafPage(
     btm_LeafEntry 	*entry;			/* an entry in leaf page */
     Two 		alignedKlen;		/* aligned length of the key length */
 
-    tpage = *apage;
-    memcpy(&apage->hdr, &tpage.hdr, sizeof(BtreeLeafHdr));
-    apageDataOffset = 0;
-    for (i=0; i < tpage.hdr.nSlots; i++) {
-        if (i == slotNo)
-            continue;
-        entry = (btm_LeafEntry*)&tpage.data[tpage.slot[-i]];
-        alignedKlen = (entry->klen + 3)/4*4;
-        len = 2*sizeof(Two) + alignedKlen + (entry->nObjects * OBJECTID_SIZE);
-        memcpy(&apage->data[apageDataOffset], entry, len);
-        apageDataOffset += len;
-    }
-    if (slotNo != NIL) {
-        entry = (btm_LeafEntry*)&tpage.data[tpage.slot[-slotNo]];
-        alignedKlen = (entry->klen + 3)/4*4;
-        len = 2*sizeof(Two) + alignedKlen + (entry->nObjects * OBJECTID_SIZE);
-        memcpy(&apage->data[apageDataOffset], entry, len);
-    }
-
-    apage->hdr.free -= apage->hdr.unused;
-    apage->hdr.unused = 0;
+    
 
 } /* edubtm_CompactLeafPage() */
