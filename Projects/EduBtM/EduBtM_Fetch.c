@@ -117,8 +117,15 @@ Four EduBtM_Fetch(
         if(kdesc->kpart[i].type!=SM_INT && kdesc->kpart[i].type!=SM_VARSTRING)
             ERR(eNOTSUPPORTED_EDUBTM);
     }
-    
 
+    if (startCompOp == SM_BOF)
+        e = edubtm_FirstObject(root, kdesc, stopKval, stopCompOp, cursor);
+    else if (startCompOp == SM_EOF)
+        e = edubtm_LastObject(root, kdesc, stopKval, stopCompOp, cursor);
+    else
+        e = edubtm_Fetch(root, kdesc, startKval, startCompOp, stopKval, stopCompOp, cursor);
+    if (e<0) ERR(e);
+    
     return(eNOERROR);
 
 } /* EduBtM_Fetch() */
@@ -161,12 +168,12 @@ Four edubtm_Fetch(
     PageID              child;          /* child page when the root is an internla page */
     Two                 alignedKlen;    /* aligned size of the key length */
     BtreePage           *apage;         /* a Page Pointer to the given root */
-    BtreeOverflow       *opage;         /* a page pointer if it necessary to access an overflow page */
+    //BtreeOverflow       *opage;         /* a page pointer if it necessary to access an overflow page */
     Boolean             found;          /* search result */
     PageID              *leafPid;       /* leaf page pointed by the cursor */
     Two                 slotNo;         /* slot pointed by the slot */
     PageID              ovPid;          /* PageID of the overflow page */
-    PageNo              ovPageNo;       /* PageNo of the overflow page */
+    //PageNo              ovPageNo;       /* PageNo of the overflow page */
     PageID              prevPid;        /* PageID of the previous page */
     PageID              nextPid;        /* PageID of the next page */
     ObjectID            *oidArray;      /* array of the ObjectIDs */
@@ -183,7 +190,99 @@ Four edubtm_Fetch(
         if(kdesc->kpart[i].type!=SM_INT && kdesc->kpart[i].type!=SM_VARSTRING)
             ERR(eNOTSUPPORTED_EDUBTM);
     }
+    if (startCompOp<=0 || startCompOp >= SM_NE)
+        ERR(eBADCOMPOP_BTM);
 
+    e = BfM_GetTrain(root, (char**)&apage, PAGE_BUF);
+    if (e<0) ERR(e);
+    if (apage->any.hdr.type & INTERNAL) {
+        edubtm_BinarySearchInternal(apage, kdesc, startKval, &idx);
+
+        child.volNo = root->volNo;
+        if (idx == -1)
+            child.pageNo = apage->bi.hdr.p0;
+        else {
+            iEntry = (btm_InternalEntry*)&apage->bi.data[apage->bi.slot[-idx]];
+            child.pageNo = iEntry->spid;
+        }
+        e = edubtm_Fetch(&child, kdesc, startKval, startCompOp, stopKval, stopCompOp, cursor);
+        if (e<0) ERRB1(e, root, PAGE_BUF);
+    }
+    else if (apage->any.hdr.type & LEAF) {
+        found = edubtm_BinarySearchLeaf(apage, kdesc, startKval, &idx);
+        prevPid.pageNo = NIL;
+        nextPid.pageNo = NIL;
+
+        if (startCompOp & SM_EQ && found) {
+            cursor->flag = CURSOR_ON;
+            slotNo = idx;
+            leafPid = root;
+        }
+        else if (startCompOp & SM_LT) {
+            if (idx < 0) {
+                MAKE_PAGEID(prevPid, root->volNo, apage->bl.hdr.prevPage);
+                if (IS_NILPAGEID(prevPid))
+                    cursor->flag = CURSOR_EOS;
+                else {
+                    e = BfM_GetTrain(&prevPid, (char**)&apage, PAGE_BUF);
+                    if (e<0) ERRB1(e, root, PAGE_BUF);
+                    cursor->flag = CURSOR_ON;
+                    slotNo = apage->bl.hdr.nSlots - 1;
+                    leafPid = &prevPid;
+                }
+            }
+            else {
+                cursor->flag = CURSOR_ON;
+                slotNo = found ? idx-1: idx;
+                leafPid = root;
+            }
+        }
+        else if (startCompOp & SM_GT) {
+            if (idx >= apage->bl.hdr.nSlots - 1) {
+                MAKE_PAGEID(nextPid, root->volNo, apage->bl.hdr.nextPage);
+                if (IS_NILPAGEID(nextPid))
+                    cursor->flag = CURSOR_EOS;
+                else {
+                    e = BfM_GetTrain(&prevPid, (char**)&apage, PAGE_BUF);
+                    if (e<0) ERRB1(e, root, PAGE_BUF);
+                    cursor->flag = CURSOR_ON;
+                    slotNo = 0;
+                    leafPid = &nextPid;
+                }
+            }
+            else {
+                cursor->flag = CURSOR_ON;
+                slotNo = idx + 1;
+                leafPid = root;
+            }
+        }
+        else
+            cursor->flag = CURSOR_EOS;
+
+        if (cursor->flag == CURSOR_ON) {
+            lEntry = (btm_LeafEntry*)&apage->bl.data[apage->bl.slot[-slotNo]];
+            lEntryOffset = (lEntry->klen + 3) / 4 * 4;
+            cursor->oid = *(ObjectID*)&lEntry->kval[lEntryOffset];
+            cursor->key = *(KeyValue*)&lEntry->klen;
+            cursor->leaf = *leafPid;
+            cursor->slotNo = slotNo;
+
+            if (!IS_NILPAGEID(prevPid)) {
+                e = BfM_FreeTrain(&prevPid, PAGE_BUF);
+                if (e<0) ERRB1(e, root, PAGE_BUF);
+            }
+            if (!IS_NILPAGEID(nextPid)) {
+                e = BfM_FreeTrain(&nextPid, PAGE_BUF);
+                if (e<0) ERRB1(e, root, PAGE_BUF);
+            }
+        }
+    }
+    else 
+        ERRB1(eBADBTREEPAGE_BTM, root, PAGE_BUF);
+
+    //printf("slotNo=%d, type=%d\n", cursor->slotNo, apage->any.hdr.type);
+    e = BfM_FreeTrain(root, PAGE_BUF);
+    if (e<0) ERR(e);
 
     return(eNOERROR);
     

@@ -118,7 +118,36 @@ Four edubtm_LastObject(
         if(kdesc->kpart[i].type!=SM_INT && kdesc->kpart[i].type!=SM_VARSTRING)
             ERR(eNOTSUPPORTED_EDUBTM);
     }
-    
+    curPid = *root;
+    child = curPid;
+    e = BfM_GetTrain(&curPid, (char**)&apage, PAGE_BUF);
+    if (e<0) ERR(e);
+
+    while (!(apage->any.hdr.type & LEAF)) {
+        if (!(apage->any.hdr.type & INTERNAL))
+            ERRB1(eBADPAGE_BTM, &curPid, PAGE_BUF);
+        iEntryOffset = apage->bi.hdr.nSlots - 1;
+        iEntry = (btm_InternalEntry*)&apage->bi.data[apage->bi.slot[-iEntryOffset]];
+        child.pageNo = iEntry->spid;
+
+        e = BfM_GetTrain(&child, (char**)&apage, PAGE_BUF);
+        if (e<0) ERRB1(e, &curPid, PAGE_BUF);
+        e = BfM_FreeTrain(&curPid, PAGE_BUF);
+        if (e<0) ERRB1(e, &curPid, PAGE_BUF);
+        curPid = child;
+    }
+    lEntryOffset = apage->bl.hdr.nSlots - 1;
+    lEntry = (btm_LeafEntry*)&apage->bl.data[apage->bl.slot[-lEntryOffset]];
+    alignedKlen = (lEntry->klen + 3) / 4 * 4;
+
+    cursor->flag = CURSOR_ON;
+    cursor->oid = *(ObjectID*)&lEntry->kval[alignedKlen];
+    cursor->key = *(KeyValue*)&lEntry->klen;
+    cursor->leaf = curPid;
+    cursor->slotNo = lEntryOffset;
+
+    e = BfM_FreeTrain(&curPid, PAGE_BUF);
+    if (e<0) ERR(e);
 
     return(eNOERROR);
     
