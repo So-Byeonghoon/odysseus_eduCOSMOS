@@ -182,9 +182,77 @@ Four edubtm_SplitLeaf(
     Two                         itemEntryLen;   /* length of entry for item */
     Two                         entryLen;       /* entry length */
     Boolean                     flag;
-    Boolean                     isTmp;
+    Boolean                     isTmp = FALSE;
  
-    
+    e = btm_AllocPage(catObjForFile, &fpage->hdr.pid, &newPid);
+    if (e<0) ERR(e);
+    e = edubtm_InitLeaf(&newPid, FALSE, isTmp);
+    if (e<0) ERR(e);
+    e = BfM_GetNewTrain(&newPid, (char**)&npage, PAGE_BUF);
+    if (e<0) ERR(e);
+
+    maxLoop = fpage->hdr.nSlots;
+    sum = 0;
+    for (i=0; i <maxLoop && sum < BL_HALF; i++) {
+        fEntry = (btm_LeafEntry*)&fpage->data[fpage->slot[-i]];
+        alignedKlen = (fEntry->klen + 3) / 4 * 4;
+        sum += 2*sizeof(Two) + alignedKlen + fEntry->nObjects * OBJECTID_SIZE;
+        if (high == i) {
+            alignedKlen = (item->klen + 3) / 4 * 4;
+            entryLen = 2*sizeof(Two) + alignedKlen + OBJECTID_SIZE;
+            sum += entryLen;
+        }
+    }
+    fpage->hdr.nSlots = i;
+
+    fEntry = (btm_LeafEntry*)&fpage->data[fpage->slot[-i]];
+    ritem->spid = newPid.pageNo;
+    ritem->klen = fEntry->klen;
+    memcpy(ritem->kval, fEntry->kval, fEntry->klen);
+
+    nEntryOffset = 0;
+    flag = FALSE;
+    for (j=0; i<maxLoop; i++, j++) {
+        npage->slot[-j] = nEntryOffset;
+        fEntry = (btm_LeafEntry*)&fpage->data[fpage->slot[-i]];
+        alignedKlen = (fEntry->klen + 3) / 4 * 4;
+        entryLen = 2*sizeof(Two) + alignedKlen + fEntry->nObjects * OBJECTID_SIZE;
+        memcpy(&npage->data[nEntryOffset], fEntry, entryLen);
+        nEntryOffset += entryLen;
+        npage->hdr.nSlots++;
+        fpage->hdr.unused += entryLen;
+        if (i==high) {
+            alignedKlen = (item->klen + 3) / 4 * 4;
+            entryLen = 2*sizeof(Two) + alignedKlen + OBJECTID_SIZE;
+            memcpy(&npage->data[nEntryOffset], &item->nObjects, entryLen - OBJECTID_SIZE);
+            nEntryOffset += entryLen - OBJECTID_SIZE;
+            memcpy(&npage->data[nEntryOffset], &item->oid, OBJECTID_SIZE);
+            nEntryOffset += OBJECTID_SIZE;
+            flag = TRUE;
+        }
+    }
+    npage->hdr.free = nEntryOffset;
+    edubtm_CompactLeafPage(fpage, flag ? NIL : high);
+
+    if (!flag) {
+        for (k=fpage->hdr.nSlots; k>high+1; k--)
+            fpage->slot[-k] = fpage->slot[-k+1];
+        fpage->slot[-i] = fpage->hdr.free;
+        alignedKlen = (item->klen + 3) / 4 * 4;
+        entryLen = 2*sizeof(Two) + alignedKlen + OBJECTID_SIZE;
+        fEntryOffset = fpage->hdr.free;
+        memcpy(&fpage->data[fEntryOffset], &item->nObjects, entryLen - OBJECTID_SIZE);
+        fEntryOffset += entryLen -OBJECTID_SIZE;
+        memcpy(&fpage->data[fEntryOffset], &item->oid, OBJECTID_SIZE);
+        fpage->hdr.free += entryLen;
+    }
+
+    e = BfM_SetDirty(&newPid, PAGE_BUF);
+    if (e<0) ERRB1(e, npage, PAGE_BUF);
+    e = BfM_SetDirty(fpage, PAGE_BUF);
+    if (e<0) ERRB1(e, fpage, PAGE_BUF);
+    e = BfM_FreeTrain(&newPid, PAGE_BUF);
+    if (e<0) ERR(e);
 
     return(eNOERROR);
     

@@ -142,7 +142,26 @@ Four edubtm_Insert(
             ERR(eNOTSUPPORTED_EDUBTM);
     }
 
-    
+    *h = FALSE;
+
+    e = BfM_GetTrain(root, (char**)&apage, PAGE_BUF);
+    if (e<0) ERR(e);
+
+    if (apage->any.hdr.type & INTERNAL) {
+        ERRB1(eNOTSUPPORTED_EDUBTM, root, PAGE_BUF);
+    }
+    else if (apage->any.hdr.type & LEAF) {
+        e = edubtm_InsertLeaf(catObjForFile, root, apage, kdesc, kval, oid, f, h, item);
+        if (e<0) ERRB1(e, root, PAGE_BUF);
+    }
+    else
+        ERRB1(eBADBTREEPAGE_BTM, root, PAGE_BUF);
+
+    e = BfM_SetDirty(root, PAGE_BUF);
+    if (e<0) ERRB1(e, root, PAGE_BUF);
+    e = BfM_FreeTrain(root, PAGE_BUF);
+    if (e<0) ERR(e);
+
     return(eNOERROR);
     
 }   /* edubtm_Insert() */
@@ -212,6 +231,34 @@ Four edubtm_InsertLeaf(
     
     /*@ Initially the flags are FALSE */
     *h = *f = FALSE;
+
+    found = edubtm_BinarySearchLeaf(page, kdesc, kval, &idx);
+    if (found)
+        ERR(eDUPLICATEDKEY_BTM);
+
+    alignedKlen = (kval->len + 3) / 4 * 4;
+    entryLen = 2*sizeof(Two) + alignedKlen + OBJECTID_SIZE;
+    leaf.oid = *oid;
+    leaf.nObjects = 1;
+    leaf.klen = kval->len;
+    memcpy(leaf.kval, kval->val, leaf.klen);
+    if (BL_FREE(page) >= entryLen + sizeof(Two)) {
+        if (BL_CFREE(page) < entryLen + sizeof(Two))
+            ERR(eNOTSUPPORTED_EDUBTM);
+        entry = (btm_LeafEntry*)&page->data[page->hdr.free];
+        memcpy(entry, &leaf.nObjects, entryLen - OBJECTID_SIZE);
+        memcpy(&entry->kval[alignedKlen], &leaf.oid, OBJECTID_SIZE);
+        for(i=page->hdr.nSlots; i>idx+1; i--)
+            page->slot[-i] = page->slot[-i+1];
+        page->slot[-idx-1] = page->hdr.free;
+        page->hdr.free += entryLen;
+        page->hdr.nSlots++;
+    }
+    else {
+        e = edubtm_SplitLeaf(catObjForFile, pid, page, idx, &leaf, item);
+        if (e<0) ERR(e);
+        *h = TRUE;
+    }
     
 
 
