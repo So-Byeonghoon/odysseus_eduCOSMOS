@@ -253,7 +253,7 @@ Four edubtm_InsertLeaf(
     leaf.nObjects = 1;
     leaf.klen = kval->len;
     memcpy(leaf.kval, kval->val, leaf.klen);
-    if (BL_CFREE(page) >= entryLen + sizeof(Two)) {
+    if (BL_FREE(page) >= entryLen + sizeof(Two)) {
         if (BL_CFREE(page) < entryLen + sizeof(Two))
             edubtm_CompactLeafPage(page, NIL);
         entry = (btm_LeafEntry*)&page->data[page->hdr.free];
@@ -334,7 +334,7 @@ Four edubtm_InsertInternal(
     *h = FALSE;
 
     entryLen = sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3) / 4 * 4;
-    if (BI_CFREE(page) >= entryLen + sizeof(Two)) {
+    if (BI_FREE(page) >= entryLen + sizeof(Two)) {
         if (BI_CFREE(page) < entryLen + sizeof(Two))
             edubtm_CompactInternalPage(page, NIL);
         entry = (btm_InternalEntry*)&page->data[page->hdr.free];
