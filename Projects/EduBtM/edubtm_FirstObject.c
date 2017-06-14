@@ -128,7 +128,7 @@ Four edubtm_FirstObject(
         e = BfM_GetTrain(&child, (char**)&apage, PAGE_BUF);
         if (e<0) ERRB1(eBADPAGE_BTM, &curPid, PAGE_BUF);
         e = BfM_FreeTrain(&curPid, PAGE_BUF);
-        if (e<0) ERRB1(eBADPAGE_BTM, &curPid, PAGE_BUF);
+        if (e<0) ERRB1(eBADPAGE_BTM, &child, PAGE_BUF);
         curPid = child;
     }
     lEntry = (btm_LeafEntry*)&apage->bl.data[apage->bl.slot[0]];
