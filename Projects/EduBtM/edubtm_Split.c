@@ -182,7 +182,7 @@ Four edubtm_SplitInternal(
 
     e = BfM_SetDirty(&newPid, PAGE_BUF);
     if (e<0) ERRB1(e, npage, PAGE_BUF);
-    e = BfM_SetDirty(fpage, PAGE_BUF);
+    e = BfM_SetDirty(&fpage->hdr.pid, PAGE_BUF);
     if (e<0) ERRB1(e, fpage, PAGE_BUF);
     e = BfM_FreeTrain(&newPid, PAGE_BUF);
     if (e<0) ERR(e);
@@ -324,7 +324,7 @@ Four edubtm_SplitLeaf(
 
     e = BfM_SetDirty(&newPid, PAGE_BUF);
     if (e<0) ERRB1(e, npage, PAGE_BUF);
-    e = BfM_SetDirty(fpage, PAGE_BUF);
+    e = BfM_SetDirty(&fpage->hdr.pid, PAGE_BUF);
     if (e<0) ERRB1(e, fpage, PAGE_BUF);
     e = BfM_FreeTrain(&newPid, PAGE_BUF);
     if (e<0) ERR(e);

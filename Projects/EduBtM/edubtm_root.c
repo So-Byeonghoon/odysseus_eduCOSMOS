@@ -142,7 +142,6 @@ Four edubtm_root_insert(
     rootPage->bi.slot[0] = rootPage->bi.hdr.free;
     rootPage->bi.hdr.free += sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3)/4*4;
 
-    printf("RootInsert: pid=%d, spid=%d, klen=%d\n", root->pageNo, item->spid, item->klen);
     e = BfM_SetDirty(&newPid, PAGE_BUF);
     if (e < 0) ERRB1(e, root, PAGE_BUF);
     e = BfM_SetDirty(root, PAGE_BUF);
