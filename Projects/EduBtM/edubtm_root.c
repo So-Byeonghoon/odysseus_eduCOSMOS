@@ -105,7 +105,53 @@ Four edubtm_root_insert(
     btm_InternalEntry *entry;	/* an internal entry */
     Boolean   isTmp;
 
+    e = btm_AllocPage(catObjForFile, root, &newPid);
+    if (e<0) ERR(e);
+    e = BfM_GetTrain(root, (char**)&rootPage, PAGE_BUF);
+    if (e<0) ERR(e);
+    e = BfM_GetNewTrain(&newPid, (char**)&newPage, PAGE_BUF);
+    if (e<0) ERRB1(e, root, PAGE_BUF);
 
+    memcpy(newPage, rootPage, PAGESIZE);
+    newPage->any.hdr.type &= ~ROOT;
+    newPage->any.hdr.pid = newPid;
+    if (newPage->any.hdr.type & LEAF) {
+        MAKE_PAGEID(nextPid, newPid.volNo, item->spid);
+        e = BfM_GetTrain(&nextPid, (char**)&nextPage, PAGE_BUF);
+        if (e<0) ERRB1(e, root, PAGE_BUF);
+
+        nextPage->hdr.prevPage = newPid.pageNo;
+        newPage->bl.hdr.nextPage = nextPid.pageNo;
+
+        e = BfM_SetDirty(&nextPid, PAGE_BUF);
+        if (e<0) ERRB1(e, root, PAGE_BUF);
+        e = BfM_FreeTrain(&nextPid, PAGE_BUF);
+        if (e<0) ERRB1(e, root, PAGE_BUF);
+    }
+
+    rootPage->bi.hdr.flags      = 3;
+    rootPage->bi.hdr.type       = INTERNAL | ROOT;
+    rootPage->bi.hdr.p0         = newPid.pageNo;
+    rootPage->bi.hdr.nSlots     = 1;
+    rootPage->bi.hdr.free       = 0;
+    rootPage->bi.hdr.unused     = 0;
+
+    entry = (btm_InternalEntry*)&rootPage->bi.data[0];
+    memcpy(entry, item, sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3)/4*4);
+    entry->klen = item->klen;
+    rootPage->bi.slot[0] = rootPage->bi.hdr.free;
+    rootPage->bi.hdr.free += sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3)/4*4;
+
+    printf("RootInsert: pid=%d, spid=%d, klen=%d\n", root->pageNo, item->spid, item->klen);
+    e = BfM_SetDirty(&newPid, PAGE_BUF);
+    if (e < 0) ERRB1(e, root, PAGE_BUF);
+    e = BfM_SetDirty(root, PAGE_BUF);
+    if (e < 0) ERRB1(e, root, PAGE_BUF);
+
+    e = BfM_FreeTrain(&newPid, PAGE_BUF);
+    if (e < 0) ERRB1(e, root, PAGE_BUF);
+    e = BfM_FreeTrain(root, PAGE_BUF);
+    if (e < 0) ERR(e);
     
     return(eNOERROR);
     
