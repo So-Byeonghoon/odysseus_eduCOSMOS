@@ -90,7 +90,7 @@ Four EduBtM_DropIndex(
 
     /*@ Free all pages concerned with the root. */
     e = edubtm_FreePages(pFid, rootPid, dlPool, dlHead);
-    if (e < 0) ERR(e);
+    if (e<0) ERR(e);
 
 	
     return(eNOERROR);

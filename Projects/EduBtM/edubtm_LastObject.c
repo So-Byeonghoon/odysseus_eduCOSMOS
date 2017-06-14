@@ -98,11 +98,11 @@ Four edubtm_LastObject(
     Four 		e;		/* error number */
     Four 		cmp;		/* result of comparison */
     BtreePage 		*apage;		/* pointer to the buffer holding current page */
-    // BtreeOverflow 	*opage;		/* pointer to the buffer holding overflow page */
+    BtreeOverflow 	*opage;		/* pointer to the buffer holding overflow page */
     PageID 		curPid;		/* PageID of the current page */
     PageID 		child;		/* PageID of the child page */
-    // PageID 		ovPid;		/* PageID of the current overflow page */
-    // PageID 		nextOvPid;	/* PageID of the next overflow page */
+    PageID 		ovPid;		/* PageID of the current overflow page */
+    PageID 		nextOvPid;	/* PageID of the next overflow page */
     Two 		lEntryOffset;	/* starting offset of a leaf entry */
     Two 		iEntryOffset;	/* starting offset of an internal entry */
     btm_LeafEntry 	*lEntry;	/* a leaf entry */
@@ -118,12 +118,11 @@ Four edubtm_LastObject(
         if(kdesc->kpart[i].type!=SM_INT && kdesc->kpart[i].type!=SM_VARSTRING)
             ERR(eNOTSUPPORTED_EDUBTM);
     }
-
     curPid = *root;
     child = curPid;
     e = BfM_GetTrain(&curPid, (char**)&apage, PAGE_BUF);
-    if (e < 0) ERR(e);
-    
+    if (e<0) ERR(e);
+
     while (!(apage->any.hdr.type & LEAF)) {
         if (!(apage->any.hdr.type & INTERNAL))
             ERRB1(eBADPAGE_BTM, &curPid, PAGE_BUF);
@@ -132,14 +131,14 @@ Four edubtm_LastObject(
         child.pageNo = iEntry->spid;
 
         e = BfM_GetTrain(&child, (char**)&apage, PAGE_BUF);
-        if (e < 0) ERRB1(e, &curPid, PAGE_BUF);
+        if (e<0) ERRB1(e, &curPid, PAGE_BUF);
         e = BfM_FreeTrain(&curPid, PAGE_BUF);
-        if (e < 0) ERRB1(e, &child, PAGE_BUF);
+        if (e<0) ERRB1(e, &child, PAGE_BUF);
         curPid = child;
     }
     lEntryOffset = apage->bl.hdr.nSlots - 1;
     lEntry = (btm_LeafEntry*)&apage->bl.data[apage->bl.slot[-lEntryOffset]];
-    alignedKlen = (lEntry->klen + 3)/4*4;
+    alignedKlen = (lEntry->klen + 3) / 4 * 4;
 
     cursor->flag = CURSOR_ON;
     cursor->oid = *(ObjectID*)&lEntry->kval[alignedKlen];
@@ -148,10 +147,7 @@ Four edubtm_LastObject(
     cursor->slotNo = lEntryOffset;
 
     e = BfM_FreeTrain(&curPid, PAGE_BUF);
-    if (e < 0) ERR(e);
-
-    return(eNOERROR);
-    
+    if (e<0) ERR(e);
 
     return(eNOERROR);
     

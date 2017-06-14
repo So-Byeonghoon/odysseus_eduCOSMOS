@@ -123,9 +123,11 @@ Boolean edubtm_BinarySearchInternal(
         if (cmp != LESS)
             high = mid;
     }
+
     *idx = low - 1;
     return (high != low);
 
+    
 } /* edubtm_BinarySearchInternal() */
 
 
@@ -172,9 +174,10 @@ Boolean edubtm_BinarySearchLeaf(
         if(kdesc->kpart[i].type!=SM_INT && kdesc->kpart[i].type!=SM_VARSTRING)
             ERR(eNOTSUPPORTED_EDUBTM);
     }
+
     high = lpage->hdr.nSlots;
     low = 0;
-    
+
     while (high > low) {
         mid = (high + low) / 2;
         entry = (btm_LeafEntry*)&lpage->data[lpage->slot[-mid]];
@@ -184,7 +187,9 @@ Boolean edubtm_BinarySearchLeaf(
         if (cmp != LESS)
             high = mid;
     }
+
     *idx = low - 1;
     return (high != low);
+
     
 } /* edubtm_BinarySearchLeaf() */

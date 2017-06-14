@@ -117,6 +117,7 @@ void edubtm_CompactInternalPage(
 
     apage->hdr.free -= apage->hdr.unused;
     apage->hdr.unused = 0;
+
     
 
 } /* edubtm_CompactInternalPage() */
@@ -156,8 +157,7 @@ void edubtm_CompactLeafPage(
     btm_LeafEntry 	*entry;			/* an entry in leaf page */
     Two 		alignedKlen;		/* aligned length of the key length */
 
-    tpage = *apage;
-    memcpy(&apage->hdr, &tpage.hdr, sizeof(BtreeLeafHdr));
+    memcpy(&tpage, apage, PAGESIZE);
     apageDataOffset = 0;
     for (i=0; i < tpage.hdr.nSlots; i++) {
         if (i == slotNo)
@@ -166,6 +166,7 @@ void edubtm_CompactLeafPage(
         alignedKlen = (entry->klen + 3)/4*4;
         len = 2*sizeof(Two) + alignedKlen + (entry->nObjects * OBJECTID_SIZE);
         memcpy(&apage->data[apageDataOffset], entry, len);
+        apage->slot[-i] = apageDataOffset;
         apageDataOffset += len;
     }
     if (slotNo != NIL) {
@@ -173,9 +174,12 @@ void edubtm_CompactLeafPage(
         alignedKlen = (entry->klen + 3)/4*4;
         len = 2*sizeof(Two) + alignedKlen + (entry->nObjects * OBJECTID_SIZE);
         memcpy(&apage->data[apageDataOffset], entry, len);
+        apage->slot[-i] = apageDataOffset;
+        apageDataOffset += len;
     }
 
-    apage->hdr.free -= apage->hdr.unused;
+    apage->hdr.free = apageDataOffset;
     apage->hdr.unused = 0;
+   
 
 } /* edubtm_CompactLeafPage() */

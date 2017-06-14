@@ -152,12 +152,47 @@ Four edubtm_Delete(
 
         
     *h = *f = FALSE;
-    
-    
-    /* Delete following 2 lines before implement this function */
-    printf("Implementation of delete operation is optional (not compulsory),\n");
-    printf("and delete operation has not been implemented yet.\n");
 
+    e = BfM_GetTrain(root, (char**)&rpage, PAGE_BUF);
+    if (e<0) ERR(e);
+
+    e = BfM_GetTrain((TrainID*)catObjForFile, (char**)&catPage, PAGE_BUF);
+    if (e<0) ERRB1(e, root, PAGE_BUF);
+    GET_PTR_TO_CATENTRY_FOR_BTREE(catObjForFile, catPage, catEntry);
+    MAKE_PHYSICALFILEID(pFid, catEntry->fid.volNo, catEntry->firstPage);
+    if (rpage->any.hdr.type & LEAF) {
+        e = edubtm_DeleteLeaf(&pFid, root, rpage, kdesc, kval, oid, 
+                              f, h, &litem, dlPool, dlHead);
+        if (e<0) ERRB1(e, root, PAGE_BUF);
+    }
+    else if (rpage->any.hdr.type & INTERNAL) {
+        edubtm_BinarySearchInternal(rpage, kdesc, kval, &idx);
+
+        child.volNo = root->volNo;
+        if (idx >=0) {
+            iEntry = (btm_InternalEntry*)&rpage->bi.data[rpage->bi.slot[-idx]];
+            child.pageNo = iEntry->spid;
+        }
+        else
+            child.pageNo = rpage->bi.hdr.p0;
+
+        e = edubtm_Delete(catObjForFile, &child, kdesc, kval, oid, 
+                          &lf, &lh, &litem, dlPool, dlHead);
+        if (e<0) ERRB1(e, root, PAGE_BUF);
+        if (lf) {
+            e = btm_Underflow(&pFid, rpage, &child, idx, f, h, &litem, dlPool, dlHead);
+            if (e<0) ERRB1(e, root, PAGE_BUF);
+            e = BfM_SetDirty(root, PAGE_BUF);
+            if (e<0) ERR(e);
+        }
+    }
+    else
+        ERR(eBADBTREEPAGE_BTM);
+
+    e = BfM_FreeTrain(root, PAGE_BUF);
+    if (e<0) ERRB1(e, (TrainID*)catObjForFile, PAGE_BUF);
+    e = BfM_FreeTrain((TrainID*)catObjForFile, PAGE_BUF);
+    if (e<0) ERR(e);
 
     return(eNOERROR);
     
@@ -227,12 +262,40 @@ Four edubtm_DeleteLeaf(
             ERR(eNOTSUPPORTED_EDUBTM);
     }
 
+    *h = *f = FALSE;
 
-    /* Delete following 2 lines before implement this function */
-    printf("Implementation of delete operation is optional (not compulsory),\n");
-    printf("and delete operation has not been implemented yet.\n");
+    found = edubtm_BinarySearchLeaf(apage, kdesc, kval, &idx);
+    if (!found)
+        ERR(eNOTFOUND_BTM);
 
+    lEntryOffset = apage->slot[-idx];
+    lEntry = (btm_LeafEntry*)&apage->data[lEntryOffset];
+    alignedKlen = (lEntry->klen + 3) / 4 * 4;
+
+    /*
+    found = FALSE;
+    oidArray = (ObjectID*)&lEntry->kval[alignedKlen];
+    for (i=0; i<lEntry->nObjects; i++) {
+        if (btm_ObjectIdComp(oid, &oidArray[i]) == EQUAL)
+            found = TRUE;
+        printf("oidArray: i=%d, unique=%d\n", i, oidArray[i].unique);
+    }
+    if (!found) ERR(eNOTFOUND_BTM);
+    */
+    if (lEntry->nObjects != 1) ERR(eNOTSUPPORTED_EDUBTM);
+
+    for(i=idx; i<apage->hdr.nSlots; i++)
+        apage->slot[-i] = apage->slot[-i-1];
+
+    apage->hdr.nSlots--;
+    apage->hdr.unused += alignedKlen + 3*sizeof(Two) + OBJECTID_SIZE;
+
+    if (BL_FREE(apage) > BL_HALF)
+        *f = TRUE;
+
+    e = BfM_SetDirty(pid, PAGE_BUF);
+    if (e<0) ERR(e);
 	      
     return(eNOERROR);
-    
+
 } /* edubtm_DeleteLeaf() */

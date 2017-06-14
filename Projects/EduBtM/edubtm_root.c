@@ -103,30 +103,30 @@ Four edubtm_root_insert(
     BtreePage *newPage;		/* pointer to a buffer holding the new page */
     BtreeLeaf *nextPage;	/* pointer to a buffer holding next page of root */
     btm_InternalEntry *entry;	/* an internal entry */
-    Two         entryLen;
-    Boolean   isTmp = FALSE;
+    Boolean   isTmp;
 
     e = btm_AllocPage(catObjForFile, root, &newPid);
-    if (e < 0) ERR(e);
+    if (e<0) ERR(e);
     e = BfM_GetTrain(root, (char**)&rootPage, PAGE_BUF);
-    if (e < 0) ERR(e);
+    if (e<0) ERR(e);
     e = BfM_GetNewTrain(&newPid, (char**)&newPage, PAGE_BUF);
-    if (e < 0) ERRB1(e, root, PAGE_BUF);
+    if (e<0) ERRB1(e, root, PAGE_BUF);
 
     memcpy(newPage, rootPage, PAGESIZE);
     newPage->any.hdr.type &= ~ROOT;
     newPage->any.hdr.pid = newPid;
     if (newPage->any.hdr.type & LEAF) {
-        nextPid.volNo = newPid.volNo;
-        nextPid.pageNo = newPage->bl.hdr.nextPage;
+        MAKE_PAGEID(nextPid, newPid.volNo, item->spid);
         e = BfM_GetTrain(&nextPid, (char**)&nextPage, PAGE_BUF);
-        if (e < 0) ERRB1(e, root, PAGE_BUF);
-        nextPage->hdr.prevPage = newPid.pageNo;
+        if (e<0) ERRB1(e, root, PAGE_BUF);
 
-        e = BfM_SetDirty(&newPid, PAGE_BUF);
-        if (e < 0) ERRB1(e, root, PAGE_BUF);
-        e = BfM_FreeTrain(&newPid, PAGE_BUF);
-        if (e < 0) ERRB1(e, root, PAGE_BUF);
+        nextPage->hdr.prevPage = newPid.pageNo;
+        newPage->bl.hdr.nextPage = nextPid.pageNo;
+
+        e = BfM_SetDirty(&nextPid, PAGE_BUF);
+        if (e<0) ERRB1(e, root, PAGE_BUF);
+        e = BfM_FreeTrain(&nextPid, PAGE_BUF);
+        if (e<0) ERRB1(e, root, PAGE_BUF);
     }
 
     rootPage->bi.hdr.flags      = 3;
@@ -137,9 +137,10 @@ Four edubtm_root_insert(
     rootPage->bi.hdr.unused     = 0;
 
     entry = (btm_InternalEntry*)&rootPage->bi.data[0];
-    entryLen = sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3)/4*4;
-    memcpy(entry, item, entryLen);
-    rootPage->bi.hdr.free += entryLen;
+    memcpy(entry, item, sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3)/4*4);
+    entry->klen = item->klen;
+    rootPage->bi.slot[0] = rootPage->bi.hdr.free;
+    rootPage->bi.hdr.free += sizeof(ShortPageID) + (sizeof(Two) + item->klen + 3)/4*4;
 
     e = BfM_SetDirty(&newPid, PAGE_BUF);
     if (e < 0) ERRB1(e, root, PAGE_BUF);
@@ -150,7 +151,7 @@ Four edubtm_root_insert(
     if (e < 0) ERRB1(e, root, PAGE_BUF);
     e = BfM_FreeTrain(root, PAGE_BUF);
     if (e < 0) ERR(e);
-
+    
     return(eNOERROR);
     
 } /* edubtm_root_insert() */
