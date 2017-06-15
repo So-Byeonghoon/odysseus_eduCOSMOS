@@ -90,7 +90,7 @@ void edubtm_CompactInternalPage(
     BtreeInternal       *apage,                 /* INOUT internal page to compact */
     Two                 slotNo)                 /* IN slot to go to the boundary of free space */
 {
-	/* These local variables are used in the solution code. However, you don¡¯t have to use all these variables in your code, and you may also declare and use additional local variables if needed. */
+	/* These local variables are used in the solution code. However, you donÂ¡Â¯t have to use all these variables in your code, and you may also declare and use additional local variables if needed. */
     BtreeInternal       tpage;                  /* temporay page used to save the given page */
     Two                 apageDataOffset;        /* where the next object is to be moved */
     Two                 len;                    /* length of the leaf entry */
@@ -106,16 +106,18 @@ void edubtm_CompactInternalPage(
         entry = (btm_InternalEntry*)&tpage.data[tpage.slot[-i]];
         len = sizeof(ShortPageID) + (sizeof(Two) + entry->klen + 3)/4*4;
         memcpy(&apage->data[apageDataOffset], entry, len);
+	apage->slot[-i] = apageDataOffset;
         apageDataOffset += len;
     }
     if (slotNo != NIL) {
         entry = (btm_InternalEntry*)&tpage.data[tpage.slot[-slotNo]];
         len = sizeof(ShortPageID) + (sizeof(Two) + entry->klen + 3)/4*4;
         memcpy(&apage->data[apageDataOffset], entry, len);
-
+        apage->slot[-slotNo] = apageDataOffset;
+        apageDataOffset += len;
     }
 
-    apage->hdr.free -= apage->hdr.unused;
+    apage->hdr.free = apageDataOffset;
     apage->hdr.unused = 0;
 
     
@@ -149,7 +151,7 @@ void edubtm_CompactLeafPage(
     BtreeLeaf 		*apage,			/* INOUT leaf page to compact */
     Two       		slotNo)			/* IN slot to go to the boundary of free space */
 {	
-	/* These local variables are used in the solution code. However, you don¡¯t have to use all these variables in your code, and you may also declare and use additional local variables if needed. */
+	/* These local variables are used in the solution code. However, you donÂ¡Â¯t have to use all these variables in your code, and you may also declare and use additional local variables if needed. */
     BtreeLeaf 		tpage;			/* temporay page used to save the given page */
     Two                 apageDataOffset;        /* where the next object is to be moved */
     Two                 len;                    /* length of the leaf entry */
@@ -174,7 +176,7 @@ void edubtm_CompactLeafPage(
         alignedKlen = (entry->klen + 3)/4*4;
         len = 2*sizeof(Two) + alignedKlen + (entry->nObjects * OBJECTID_SIZE);
         memcpy(&apage->data[apageDataOffset], entry, len);
-        apage->slot[-i] = apageDataOffset;
+        apage->slot[-slotNo] = apageDataOffset;
         apageDataOffset += len;
     }
 
